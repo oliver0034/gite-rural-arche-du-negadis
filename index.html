@@ -12,7 +12,7 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://gites-arche-du-negadis.fr/">
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gites-arche-du-negadis.fr/">
   <meta property="og:title" content="Gîte Équestre L'Arche du Négadis – Paulhan, Hérault">
@@ -44,23 +44,13 @@
       "addressCountry": "FR",
       "addressRegion": "Hérault"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "43.53",
-      "longitude": "3.45"
-    },
     "priceRange": "€€",
     "amenityFeature": [
       {"@type": "LocationFeatureSpecification", "name": "Climatisation", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Pension pour chevaux", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Jardin privatisé", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Barbecue", "value": true},
-      {"@type": "LocationFeatureSpecification", "name": "Parking privatif", "value": true},
-      {"@type": "LocationFeatureSpecification", "name": "Wifi", "value": true}
-    ],
-    "image": [
-      "https://gites-arche-du-negadis.fr/images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp",
-      "https://gites-arche-du-negadis.fr/images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-01.webp"
+      {"@type": "LocationFeatureSpecification", "name": "Parking privatif", "value": true}
     ],
     "containsPlace": [
       {
@@ -81,745 +71,930 @@
   }
   </script>
 
-  <!-- FAQ Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Peut-on venir avec son cheval ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, votre cheval est le bienvenu ! Nous mettons à disposition box individuel et/ou paddock selon vos besoins. Idéal pour les cavaliers en itinérance ou en séjour de randonnée."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Les chiens sont-ils acceptés ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Afin de préserver la tranquillité du lieu et le bien-être des animaux de l'élevage, les chiens ne sont malheureusement pas admis."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quelle est la situation géographique des gîtes ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Les gîtes sont situés à Paulhan (34230) : 10 min de Pézenas, 20 min du Lac du Salagou, 25 min des Gorges de l'Hérault, 30 min de Sète, Agde et Mèze, 40 min de Montpellier. Accès direct A75 à 5 min."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quelle est la durée minimale de séjour ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "La maisonnette est proposée à la semaine en saison. L'appartement T2 est disponible pour des week-ends ou des séjours à la semaine. Contactez-nous pour connaître les disponibilités."
-        }
-      }
+      {"@type": "Question", "name": "Peut-on venir avec son cheval ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, votre cheval est le bienvenu. Box individuel et/ou paddock disponibles selon vos besoins."}},
+      {"@type": "Question", "name": "Les chiens sont-ils acceptés ?", "acceptedAnswer": {"@type": "Answer", "text": "Non, afin de préserver la tranquillité du lieu et le bien-être des animaux de l'élevage."}},
+      {"@type": "Question", "name": "Quelle est la situation géographique ?", "acceptedAnswer": {"@type": "Answer", "text": "Paulhan (34230) : 10 min de Pézenas, 20 min du Lac du Salagou, 25 min des Gorges de l'Hérault, 5 min de l'A75."}},
+      {"@type": "Question", "name": "Le télétravail est-il possible ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, WiFi disponible et coin bureau dans les deux hébergements."}}
     ]
   }
   </script>
 
-  <!-- Preconnect for performance -->
+  <!-- Fonts — Cormorant Garamond (titres) + Inter (corps) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ============ RESET & BASE ============ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-
+    /* ═══════════════════════════════════════════
+       TOKENS — charte arche-negadis.fr
+    ═══════════════════════════════════════════ */
     :root {
-      --sage: #7a9e7e;
-      --sage-light: #a8c5ab;
-      --sage-dark: #4a7050;
-      --terracotta: #c67b52;
-      --terracotta-light: #e8a882;
-      --cream: #faf6f0;
-      --warm-white: #fffdf9;
-      --stone: #8b7355;
-      --dark: #1a1a18;
-      --mid: #4a4a42;
-      --light-text: #6b6b60;
-      --border: #e8e0d0;
-      --shadow: 0 4px 24px rgba(26,26,24,0.08);
-      --shadow-lg: 0 8px 48px rgba(26,26,24,0.14);
-      --radius: 12px;
-      --radius-lg: 20px;
+      --bg:          #13130e;
+      --bg-2:        #1c1c14;
+      --bg-3:        #252518;
+      --bg-card:     #1e1e16;
+      --gold:        #c9a05a;
+      --gold-light:  #ddb97a;
+      --gold-dim:    rgba(201,160,90,0.12);
+      --gold-border: rgba(201,160,90,0.25);
+      --cream:       #f0e8d8;
+      --text:        rgba(232,222,202,0.85);
+      --text-dim:    rgba(232,222,202,0.45);
+      --border:      rgba(255,255,255,0.07);
+      --radius:      14px;
+      --radius-lg:   20px;
+      --shadow:      0 8px 40px rgba(0,0,0,0.45);
+      --shadow-lg:   0 16px 64px rgba(0,0,0,0.6);
     }
 
+    /* ═══════════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--warm-white);
-      color: var(--dark);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
     }
 
-    /* ============ TYPOGRAPHY ============ */
-    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
-    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; }
-    h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 600; }
-    h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 600; }
-    p { font-size: 1rem; color: var(--mid); }
+    /* ═══════════════════════════════════════════
+       TYPOGRAPHY
+    ═══════════════════════════════════════════ */
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--cream);
+      line-height: 1.2;
+    }
+    h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 500; }
+    h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 500; }
+    h3 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); font-weight: 500; }
+    p { font-size: 0.95rem; color: var(--text); font-weight: 300; }
 
-    /* ============ NAVIGATION ============ */
+    /* Gold divider after h2 */
+    .h2-divider {
+      width: 48px; height: 1px;
+      background: var(--gold);
+      margin: 1.2rem 0 1.5rem;
+      display: block;
+    }
+
+    /* Section label */
+    .label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════════ */
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gold); color: var(--bg);
+      padding: 0.8rem 2rem; border-radius: 50px;
+      font-family: 'Inter', sans-serif; font-size: 0.8rem;
+      font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.25s;
+      border: 1px solid var(--gold);
+    }
+    .btn-gold:hover {
+      background: var(--gold-light); border-color: var(--gold-light);
+      transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,160,90,0.35);
+    }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--cream);
+      padding: 0.8rem 2rem; border-radius: 50px;
+      font-family: 'Inter', sans-serif; font-size: 0.8rem;
+      font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.25s;
+      border: 1px solid rgba(240,232,216,0.35);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold); color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--gold); font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; transition: gap 0.2s;
+    }
+    .btn-ghost:hover { gap: 0.7rem; }
+
+    /* ═══════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════ */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 5%;
-      background: rgba(255,253,249,0.92);
-      backdrop-filter: blur(12px);
+      padding: 1.2rem 5%;
+      background: rgba(19,19,14,0.88);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       transition: box-shadow 0.3s;
     }
-    nav.scrolled { box-shadow: var(--shadow); }
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--dark);
-      text-decoration: none;
-      display: flex; align-items: center; gap: 0.5rem;
+    nav.scrolled {
+      box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+      background: rgba(19,19,14,0.96);
     }
-    .nav-logo span { color: var(--sage-dark); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none;
+    }
+    .nav-logo img {
+      height: 44px; width: 44px;
+      object-fit: contain; border-radius: 50%;
+      flex-shrink: 0;
+      filter: drop-shadow(0 1px 6px rgba(201,160,90,0.25));
+    }
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem; font-weight: 600;
+      color: var(--cream); letter-spacing: 0.02em;
+      line-height: 1.2; white-space: nowrap;
+    }
+    .nav-logo-text span { color: var(--gold); display: block; font-size: 0.65rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
     .nav-links a {
-      text-decoration: none; color: var(--mid); font-size: 0.9rem; font-weight: 500;
+      text-decoration: none; color: var(--text-dim);
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--sage-dark); }
-    .nav-cta {
-      background: var(--sage-dark); color: white !important;
-      padding: 0.5rem 1.2rem; border-radius: 50px;
-      transition: background 0.2s !important;
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links .nav-cta {
+      color: var(--bg) !important;
+      background: var(--gold);
+      padding: 0.45rem 1.2rem; border-radius: 50px;
+      font-size: 0.72rem;
     }
-    .nav-cta:hover { background: var(--sage) !important; color: white !important; }
-    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
-    .nav-toggle span { width: 24px; height: 2px; background: var(--dark); display: block; transition: all 0.3s; }
+    .nav-links .nav-cta:hover { background: var(--gold-light); }
 
-    /* ============ HERO ============ */
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none;
+    }
+    .nav-toggle span { width: 22px; height: 1.5px; background: var(--cream); display: block; }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
     .hero {
       min-height: 100vh;
       display: grid; grid-template-columns: 1fr 1fr;
       align-items: center;
-      padding: 7rem 5% 4rem;
-      gap: 4rem;
-      background: var(--cream);
-      position: relative;
-      overflow: hidden;
+      padding: 8rem 5% 5rem;
+      gap: 5rem;
+      background: var(--bg);
+      position: relative; overflow: hidden;
     }
     .hero::before {
       content: '';
-      position: absolute; top: -20%; right: -10%;
-      width: 60vw; height: 60vw;
-      background: radial-gradient(circle, rgba(122,158,126,0.12) 0%, transparent 70%);
+      position: absolute; top: 0; right: 0;
+      width: 55%; height: 100%;
+      background: radial-gradient(ellipse at 80% 50%, rgba(201,160,90,0.05) 0%, transparent 60%);
       pointer-events: none;
     }
-    .hero-content { position: relative; z-index: 1; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(122,158,126,0.15); color: var(--sage-dark);
-      padding: 0.4rem 1rem; border-radius: 50px;
-      font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem;
-      border: 1px solid rgba(122,158,126,0.3);
-    }
-    .hero h1 {
-      margin-bottom: 1.2rem;
-      color: var(--dark);
-    }
-    .hero h1 em {
-      font-style: italic; color: var(--sage-dark);
-      display: block;
-    }
-    .hero-desc {
-      font-size: 1.1rem; color: var(--mid);
-      margin-bottom: 2rem; max-width: 500px; line-height: 1.8;
-    }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-    .btn-primary {
-      background: var(--sage-dark); color: white;
-      padding: 0.85rem 2rem; border-radius: 50px;
-      text-decoration: none; font-weight: 600; font-size: 0.95rem;
-      transition: all 0.25s; display: inline-flex; align-items: center; gap: 0.5rem;
-      box-shadow: 0 4px 16px rgba(74,112,80,0.3);
-    }
-    .btn-primary:hover { background: var(--sage); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(74,112,80,0.4); }
-    .btn-secondary {
-      background: transparent; color: var(--dark);
-      padding: 0.85rem 2rem; border-radius: 50px;
-      text-decoration: none; font-weight: 600; font-size: 0.95rem;
-      border: 2px solid var(--border);
-      transition: all 0.25s; display: inline-flex; align-items: center; gap: 0.5rem;
-    }
-    .btn-secondary:hover { border-color: var(--sage); color: var(--sage-dark); transform: translateY(-2px); }
-    .hero-stats {
-      display: flex; gap: 2rem;
-      padding-top: 2rem; border-top: 1px solid var(--border);
-    }
-    .hero-stat { text-align: center; }
-    .hero-stat .number {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem; font-weight: 700; color: var(--dark);
-      display: block;
-    }
-    .hero-stat .label { font-size: 0.78rem; color: var(--light-text); text-transform: uppercase; letter-spacing: 0.05em; }
 
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 32px; height: 1px; background: var(--gold); flex-shrink: 0;
+    }
+    .hero-eyebrow span {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+    }
+
+    .hero h1 { margin-bottom: 1.5rem; }
+    .hero h1 em {
+      font-style: italic; color: var(--gold);
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 1rem; color: var(--text);
+      margin-bottom: 2.5rem; max-width: 460px;
+      line-height: 1.85; font-weight: 300;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+
+    .hero-stats {
+      display: flex; gap: 0;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .hero-stat {
+      flex: 1; padding: 0 2rem 0 0;
+      border-right: 1px solid var(--border);
+    }
+    .hero-stat:last-child { border-right: none; padding-left: 2rem; padding-right: 0; }
+    .hero-stat:first-child { padding-left: 0; }
+    .hero-stat .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 600; color: var(--gold);
+      display: block; line-height: 1;
+    }
+    .hero-stat .lbl {
+      font-size: 0.72rem; color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-top: 0.3rem; display: block;
+    }
+
+    /* Hero visual */
     .hero-visual { position: relative; }
     .hero-mosaic {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 280px 200px;
-      gap: 12px;
+      grid-template-columns: 1.1fr 1fr;
+      grid-template-rows: 300px 180px;
+      gap: 10px;
       border-radius: var(--radius-lg);
       overflow: hidden;
     }
     .hero-mosaic img {
       width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s ease;
     }
     .hero-mosaic img:hover { transform: scale(1.04); }
-    .hero-mosaic .img-main {
-      grid-column: 1; grid-row: 1 / 3;
-    }
-    .hero-badge-float {
-      position: absolute; bottom: -1rem; left: -1rem;
-      background: white; padding: 1rem 1.5rem;
-      border-radius: var(--radius); box-shadow: var(--shadow-lg);
-      display: flex; align-items: center; gap: 0.75rem;
-      z-index: 2;
-    }
-    .badge-icon { font-size: 1.8rem; }
-    .badge-text { font-size: 0.8rem; color: var(--light-text); line-height: 1.4; }
-    .badge-text strong { color: var(--dark); display: block; font-size: 0.9rem; }
+    .hero-mosaic .main { grid-row: span 2; }
 
-    /* ============ SECTION BASE ============ */
-    section { padding: 5rem 5%; }
-    .section-label {
-      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: var(--sage-dark);
-      margin-bottom: 0.75rem; display: block;
+    .hero-float {
+      position: absolute; bottom: -1rem; left: -1.5rem;
+      background: var(--bg-3); border: 1px solid var(--gold-border);
+      padding: 1rem 1.4rem; border-radius: var(--radius);
+      display: flex; align-items: center; gap: 0.8rem;
+      z-index: 2; box-shadow: var(--shadow);
     }
-    .section-header { margin-bottom: 3rem; }
-    .section-header p { font-size: 1.05rem; color: var(--mid); max-width: 600px; margin-top: 0.75rem; }
+    .hero-float .fi { font-size: 1.6rem; }
+    .hero-float .ft strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; color: var(--cream); display: block; font-weight: 500;
+    }
+    .hero-float .ft span { font-size: 0.78rem; color: var(--text-dim); }
 
-    /* ============ USP STRIP ============ */
+    /* ═══════════════════════════════════════════
+       USP STRIP
+    ═══════════════════════════════════════════ */
     .usp-strip {
-      background: var(--sage-dark);
-      padding: 2rem 5%;
-      display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem;
+      background: var(--bg-3);
+      border-top: 1px solid var(--gold-border);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 1.4rem 5%;
+      display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;
     }
-    .usp-item { display: flex; align-items: center; gap: 0.75rem; color: white; }
-    .usp-icon { font-size: 1.4rem; }
-    .usp-item span { font-size: 0.9rem; font-weight: 500; opacity: 0.95; }
+    .usp-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.78rem; color: var(--text-dim);
+      font-weight: 400; letter-spacing: 0.05em;
+    }
+    .usp-item .ui { font-size: 1rem; }
+    .usp-item strong { color: var(--cream); font-weight: 500; }
 
-    /* ============ GITES ============ */
-    .gites { background: var(--warm-white); }
-    .gites-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    /* ═══════════════════════════════════════════
+       SECTIONS BASE
+    ═══════════════════════════════════════════ */
+    section { padding: 6rem 5%; }
+    .s-light { background: var(--bg-2); }
+    .s-dark  { background: var(--bg); }
+
+    .section-center { text-align: center; }
+    .section-center .h2-divider { margin-left: auto; margin-right: auto; }
+    .section-center p { max-width: 600px; margin: 0 auto; }
+
+    /* ═══════════════════════════════════════════
+       GITES
+    ═══════════════════════════════════════════ */
+    .gites-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3.5rem; }
 
     .gite-card {
-      background: var(--cream);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       overflow: hidden;
-      border: 1px solid var(--border);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
     }
-    .gite-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-    .gite-gallery {
-      position: relative; height: 280px; overflow: hidden;
+    .gite-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold-border);
+      box-shadow: var(--shadow-lg);
     }
+
+    /* Gallery carousel */
+    .gite-gallery { position: relative; height: 300px; overflow: hidden; }
     .gite-gallery img {
       width: 100%; height: 100%; object-fit: cover;
       position: absolute; top: 0; left: 0;
-      transition: opacity 0.5s, transform 0.5s;
+      transition: opacity 0.6s, transform 0.6s;
     }
     .gite-gallery img.active { opacity: 1; transform: scale(1); z-index: 1; }
     .gite-gallery img:not(.active) { opacity: 0; transform: scale(1.04); z-index: 0; }
+
     .gallery-dots {
-      position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
       display: flex; gap: 6px; z-index: 2;
     }
     .gallery-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: rgba(255,255,255,0.5); cursor: pointer; border: none;
-      transition: background 0.2s, transform 0.2s;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,0.3); cursor: pointer;
+      border: none; transition: all 0.25s;
     }
-    .gallery-dot.active { background: white; transform: scale(1.3); }
+    .gallery-dot.active { background: var(--gold); transform: scale(1.4); }
+
     .gite-tag {
       position: absolute; top: 1rem; left: 1rem; z-index: 2;
-      background: white; padding: 0.35rem 0.9rem;
-      border-radius: 50px; font-size: 0.78rem; font-weight: 700;
-      color: var(--sage-dark);
+      background: var(--bg); color: var(--gold);
+      padding: 0.3rem 0.9rem; border-radius: 50px;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid var(--gold-border);
     }
-    .gite-body { padding: 1.75rem; }
-    .gite-body h3 { margin-bottom: 0.5rem; color: var(--dark); }
-    .gite-subtitle { font-size: 0.88rem; color: var(--terracotta); font-weight: 600; margin-bottom: 1rem; }
-    .gite-desc { font-size: 0.93rem; color: var(--mid); margin-bottom: 1.25rem; line-height: 1.7; }
-    .gite-features {
-      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;
+
+    .gite-overlay {
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(to top, rgba(13,13,9,0.7) 0%, transparent 50%);
     }
-    .feature-chip {
-      background: white; border: 1px solid var(--border);
-      padding: 0.3rem 0.75rem; border-radius: 50px;
-      font-size: 0.78rem; color: var(--mid); font-weight: 500;
-      display: flex; align-items: center; gap: 0.35rem;
+
+    .gite-body { padding: 1.75rem 2rem; }
+    .gite-body h3 { color: var(--cream); margin-bottom: 0.3rem; }
+    .gite-sub { font-size: 0.78rem; color: var(--gold); font-weight: 500; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    .gite-desc { font-size: 0.9rem; color: var(--text); line-height: 1.75; margin-bottom: 1.5rem; }
+
+    .gite-features { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.75rem; }
+    .feat {
+      background: var(--bg-3); border: 1px solid var(--border);
+      padding: 0.28rem 0.7rem; border-radius: 50px;
+      font-size: 0.72rem; color: var(--text-dim);
+      font-weight: 400; display: flex; align-items: center; gap: 0.3rem;
     }
+
     .gite-footer {
       display: flex; align-items: center; justify-content: space-between;
-      padding-top: 1.25rem; border-top: 1px solid var(--border);
+      padding-top: 1.5rem; border-top: 1px solid var(--border);
     }
-    .gite-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--dark); }
-    .gite-price span { font-size: 0.8rem; font-weight: 400; color: var(--light-text); font-family: 'Inter', sans-serif; }
-    .btn-gite {
-      background: var(--terracotta); color: white;
-      padding: 0.55rem 1.25rem; border-radius: 50px;
-      text-decoration: none; font-size: 0.85rem; font-weight: 600;
-      transition: all 0.2s;
+    .gite-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; color: var(--cream);
     }
-    .btn-gite:hover { background: var(--stone); transform: translateY(-1px); }
+    .gite-price span { font-size: 0.78rem; color: var(--text-dim); font-family: 'Inter', sans-serif; }
 
-    /* ============ DOMAINE ============ */
-    .domaine { background: var(--cream); }
-    .domaine-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .domaine-gallery-stack { position: relative; height: 500px; }
-    .domaine-gallery-stack img {
+    /* ═══════════════════════════════════════════
+       DOMAINE
+    ═══════════════════════════════════════════ */
+    .domaine-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+
+    .dom-stack { position: relative; height: 520px; }
+    .dom-stack img {
       position: absolute; border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
-      object-fit: cover;
+      object-fit: cover; box-shadow: var(--shadow-lg);
     }
-    .domaine-gallery-stack img:first-child {
-      width: 75%; height: 380px; top: 0; left: 0;
+    .dom-stack img:first-child { width: 78%; height: 400px; top: 0; left: 0; }
+    .dom-stack img:last-child {
+      width: 56%; height: 280px; bottom: 0; right: 0;
+      border: 3px solid var(--bg-3);
     }
-    .domaine-gallery-stack img:last-child {
-      width: 55%; height: 280px; bottom: 0; right: 0;
-      border: 4px solid white;
+    /* Gold corner accent */
+    .dom-stack::after {
+      content: '';
+      position: absolute; top: -16px; left: -16px;
+      width: 60px; height: 60px;
+      border-top: 2px solid var(--gold);
+      border-left: 2px solid var(--gold);
+      border-radius: 4px 0 0 0;
     }
-    .domaine-content h2 { margin-bottom: 1rem; }
-    .domaine-content p { margin-bottom: 1.5rem; font-size: 1rem; }
-    .domaine-pillars { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+
+    .dom-pillars { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2rem; }
     .pillar {
       display: flex; align-items: flex-start; gap: 1rem;
-      background: white; padding: 1.1rem 1.25rem;
-      border-radius: var(--radius); border: 1px solid var(--border);
+      padding: 1.1rem 1.25rem;
+      background: var(--bg-3); border-radius: var(--radius);
+      border: 1px solid var(--border);
+      transition: border-color 0.25s;
     }
-    .pillar-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .pillar-text h4 { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--dark); margin-bottom: 0.2rem; }
-    .pillar-text p { font-size: 0.85rem; color: var(--light-text); margin: 0; }
+    .pillar:hover { border-color: var(--gold-border); }
+    .pillar-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .pillar h4 {
+      font-family: 'Inter', sans-serif; font-size: 0.85rem;
+      font-weight: 600; color: var(--cream); margin-bottom: 0.15rem;
+    }
+    .pillar p { font-size: 0.82rem; color: var(--text-dim); margin: 0; }
 
-    /* ============ GALLERY ============ */
-    .gallery { background: var(--warm-white); }
+    /* ═══════════════════════════════════════════
+       GALLERY MASONRY
+    ═══════════════════════════════════════════ */
     .gallery-masonry {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-auto-rows: 200px;
-      gap: 10px;
+      gap: 8px;
       border-radius: var(--radius-lg);
       overflow: hidden;
+      margin-top: 3.5rem;
     }
-    .gallery-masonry .g-item { overflow: hidden; cursor: pointer; position: relative; }
-    .gallery-masonry .g-item img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.5s ease;
+    .g-item { overflow: hidden; cursor: pointer; position: relative; }
+    .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s ease; }
+    .g-item:hover img { transform: scale(1.07); }
+    .g-item::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(201,160,90,0); transition: background 0.3s;
     }
-    .gallery-masonry .g-item:hover img { transform: scale(1.06); }
-    .gallery-masonry .g-item.tall { grid-row: span 2; }
-    .gallery-masonry .g-item.wide { grid-column: span 2; }
+    .g-item:hover::after { background: rgba(201,160,90,0.08); }
+    .g-item.tall { grid-row: span 2; }
+    .g-item.wide { grid-column: span 2; }
 
     /* Lightbox */
     .lightbox {
       display: none; position: fixed; inset: 0; z-index: 1000;
-      background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.95); align-items: center; justify-content: center;
     }
     .lightbox.open { display: flex; }
-    .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px; }
-    .lightbox-close {
+    .lightbox img { max-width: 88vw; max-height: 88vh; object-fit: contain; border-radius: 8px; }
+    .lb-close {
       position: absolute; top: 1.5rem; right: 1.5rem;
-      font-size: 2rem; color: white; cursor: pointer; background: none; border: none;
-      line-height: 1; opacity: 0.8; transition: opacity 0.2s;
+      font-size: 1.8rem; color: var(--text-dim); cursor: pointer;
+      background: none; border: none; line-height: 1;
+      transition: color 0.2s;
     }
-    .lightbox-close:hover { opacity: 1; }
-    .lightbox-nav {
+    .lb-close:hover { color: var(--gold); }
+    .lb-nav {
       position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(255,255,255,0.15); border: none; color: white;
-      width: 50px; height: 50px; border-radius: 50%; font-size: 1.4rem;
-      cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+      color: var(--cream); width: 48px; height: 48px; border-radius: 50%;
+      font-size: 1.3rem; cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+      transition: all 0.2s;
     }
-    .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
-    .lightbox-prev { left: 1.5rem; }
-    .lightbox-next { right: 1.5rem; }
+    .lb-nav:hover { background: var(--gold-dim); border-color: var(--gold-border); color: var(--gold); }
+    .lb-prev { left: 1.5rem; }
+    .lb-next { right: 1.5rem; }
 
-    /* ============ LOCALISATION ============ */
-    .localisation { background: var(--cream); }
-    .localisation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .distances-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
-    .distance-item {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.85rem 1.25rem;
-      background: white; border-radius: var(--radius);
-      border: 1px solid var(--border);
+    /* ═══════════════════════════════════════════
+       EQUESTRE — fond vert très sombre
+    ═══════════════════════════════════════════ */
+    .equestre {
+      background: var(--bg-3);
+      border-top: 1px solid var(--gold-border);
+      border-bottom: 1px solid var(--gold-border);
     }
-    .distance-name { display: flex; align-items: center; gap: 0.75rem; font-weight: 500; color: var(--dark); font-size: 0.92rem; }
-    .distance-name .icon { font-size: 1.1rem; }
-    .distance-time {
-      font-weight: 700; color: var(--sage-dark); font-size: 0.88rem;
-      background: rgba(122,158,126,0.1); padding: 0.2rem 0.65rem; border-radius: 50px;
+    .equestre-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem; align-items: center; }
+
+    .eq-features { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 2rem; }
+    .eq-feat {
+      background: rgba(255,255,255,0.03); border-radius: var(--radius);
+      padding: 1.2rem; border: 1px solid var(--border);
+      transition: border-color 0.25s;
     }
-    .map-embed {
+    .eq-feat:hover { border-color: var(--gold-border); }
+    .eq-feat .efi { font-size: 1.3rem; margin-bottom: 0.5rem; display: block; }
+    .eq-feat h4 {
+      font-family: 'Inter', sans-serif; font-size: 0.82rem;
+      font-weight: 600; color: var(--cream); margin-bottom: 0.2rem;
+    }
+    .eq-feat p { font-size: 0.78rem; color: var(--text-dim); margin: 0; }
+
+    .equestre-img {
       border-radius: var(--radius-lg); overflow: hidden;
-      box-shadow: var(--shadow); border: 1px solid var(--border);
-      height: 400px; background: #e8e4dc;
-      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-lg);
       position: relative;
     }
-    .map-placeholder {
-      text-align: center; color: var(--light-text);
+    .equestre-img::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(135deg, rgba(201,160,90,0.06) 0%, transparent 60%);
     }
-    .map-placeholder .map-icon { font-size: 3rem; margin-bottom: 0.5rem; display: block; }
-    .map-placeholder p { font-size: 0.9rem; }
-    .map-placeholder a {
-      color: var(--sage-dark); font-weight: 600; text-decoration: none;
-      display: inline-block; margin-top: 0.5rem;
-    }
+    .equestre-img img { width: 100%; height: 440px; object-fit: cover; display: block; }
 
-    /* ============ EQUESTRE ============ */
-    .equestre { background: var(--sage-dark); color: white; }
-    .equestre .section-label { color: var(--sage-light); }
-    .equestre h2 { color: white; }
-    .equestre p { color: rgba(255,255,255,0.8); }
-    .equestre-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
-    .equestre-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
-    .eq-feature {
-      background: rgba(255,255,255,0.08); border-radius: var(--radius);
-      padding: 1.25rem; border: 1px solid rgba(255,255,255,0.12);
-    }
-    .eq-feature .ef-icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
-    .eq-feature h4 { font-family: 'Inter', sans-serif; font-size: 0.88rem; font-weight: 700; color: white; margin-bottom: 0.3rem; }
-    .eq-feature p { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin: 0; }
-    .equestre-image {
-      border-radius: var(--radius-lg); overflow: hidden;
-      box-shadow: 0 16px 64px rgba(0,0,0,0.3);
-    }
-    .equestre-image img { width: 100%; height: 420px; object-fit: cover; }
     .note-chiens {
-      margin-top: 1.5rem; padding: 1rem 1.25rem;
-      background: rgba(255,255,255,0.06); border-radius: var(--radius);
-      border-left: 3px solid var(--terracotta-light);
-      font-size: 0.88rem; color: rgba(255,255,255,0.75);
+      margin-top: 1.75rem; padding: 0.9rem 1.2rem;
+      background: rgba(201,160,90,0.06); border-radius: var(--radius);
+      border-left: 2px solid var(--gold);
+      font-size: 0.82rem; color: var(--text-dim);
     }
-    .note-chiens strong { color: white; }
+    .note-chiens strong { color: var(--gold); }
 
-    /* ============ FAQ ============ */
-    .faq { background: var(--warm-white); }
-    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 900px; margin: 0 auto; }
+    /* ═══════════════════════════════════════════
+       LOCALISATION
+    ═══════════════════════════════════════════ */
+    .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3.5rem; }
+
+    .dist-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .dist-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.2rem;
+      background: var(--bg-3); border-radius: var(--radius);
+      border: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    .dist-item:hover { border-color: var(--gold-border); }
+    .dist-name {
+      display: flex; align-items: center; gap: 0.7rem;
+      font-size: 0.88rem; color: var(--cream); font-weight: 400;
+    }
+    .dist-name .di { font-size: 1rem; }
+    .dist-time {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; color: var(--gold); font-weight: 500;
+    }
+
+    .map-box {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gold-border);
+      height: 380px; background: var(--bg-3);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .map-box::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at center, rgba(201,160,90,0.04) 0%, transparent 70%);
+    }
+    .map-inner { position: relative; z-index: 1; }
+    .map-inner .map-icon { font-size: 2.5rem; display: block; margin-bottom: 0.75rem; color: var(--gold); }
+    .map-inner address {
+      font-style: normal; font-size: 0.9rem; color: var(--cream);
+      line-height: 1.7; margin-bottom: 1rem;
+    }
+    .map-inner a {
+      color: var(--gold); font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: gap 0.2s;
+    }
+    .map-inner a:hover { gap: 0.7rem; }
+
+    /* ═══════════════════════════════════════════
+       FAQ
+    ═══════════════════════════════════════════ */
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; max-width: 960px; margin: 3.5rem auto 0; }
     .faq-item {
-      background: var(--cream); border-radius: var(--radius);
+      background: var(--bg-3); border-radius: var(--radius);
       border: 1px solid var(--border); overflow: hidden;
+      transition: border-color 0.25s;
     }
-    .faq-question {
-      width: 100%; text-align: left; padding: 1.1rem 1.25rem;
+    .faq-item.open, .faq-item:hover { border-color: var(--gold-border); }
+    .faq-q {
+      width: 100%; text-align: left; padding: 1.1rem 1.3rem;
       background: none; border: none; cursor: pointer;
-      display: flex; justify-content: space-between; align-items: center;
-      font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 600; color: var(--dark);
-      gap: 1rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      font-family: 'Inter', sans-serif; font-size: 0.88rem;
+      font-weight: 500; color: var(--cream);
     }
-    .faq-question .faq-icon { font-size: 1.2rem; transition: transform 0.3s; flex-shrink: 0; }
+    .faq-icon { color: var(--gold); font-size: 1.1rem; transition: transform 0.3s; flex-shrink: 0; }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-answer {
-      max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
-    }
-    .faq-item.open .faq-answer { max-height: 200px; }
-    .faq-answer p { padding: 0 1.25rem 1.25rem; font-size: 0.88rem; color: var(--light-text); margin: 0; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-a { max-height: 200px; }
+    .faq-a p { padding: 0 1.3rem 1.3rem; font-size: 0.85rem; color: var(--text-dim); margin: 0; }
 
-    /* ============ CONTACT ============ */
-    .contact { background: var(--cream); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
-    .contact-info h2 { margin-bottom: 1rem; }
-    .contact-info p { margin-bottom: 2rem; }
-    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+    /* ═══════════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════════ */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.35fr; gap: 5rem; align-items: start; }
+
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2rem; }
     .contact-link {
       display: flex; align-items: center; gap: 1rem;
-      padding: 1.1rem 1.25rem;
-      background: white; border-radius: var(--radius);
-      border: 1px solid var(--border); text-decoration: none;
-      transition: box-shadow 0.2s, transform 0.2s;
+      padding: 1.1rem 1.3rem;
+      background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: var(--radius); text-decoration: none;
+      transition: all 0.25s;
     }
-    .contact-link:hover { box-shadow: var(--shadow); transform: translateX(4px); }
-    .contact-link .cl-icon { font-size: 1.4rem; }
-    .contact-link .cl-text strong { display: block; font-size: 0.9rem; color: var(--dark); }
-    .contact-link .cl-text span { font-size: 0.82rem; color: var(--light-text); }
+    .contact-link:hover { border-color: var(--gold-border); transform: translateX(4px); }
+    .contact-link .cl-i { font-size: 1.3rem; }
+    .contact-link strong { display: block; font-size: 0.88rem; color: var(--cream); font-weight: 500; }
+    .contact-link span { font-size: 0.78rem; color: var(--text-dim); }
 
     .contact-form {
-      background: white; padding: 2rem; border-radius: var(--radius-lg);
-      border: 1px solid var(--border); box-shadow: var(--shadow);
+      background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 2.25rem;
     }
-    .contact-form h3 { margin-bottom: 1.5rem; font-size: 1.3rem; }
-    .form-group { margin-bottom: 1.25rem; }
+    .contact-form h3 { margin-bottom: 1.75rem; font-size: 1.4rem; }
+    .form-group { margin-bottom: 1.1rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--dark); margin-bottom: 0.4rem; }
+    label {
+      display: block; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 0.45rem;
+    }
     input, select, textarea {
       width: 100%; padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.04);
       border: 1px solid var(--border); border-radius: 8px;
-      font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--dark);
-      background: var(--cream); transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
+      font-family: 'Inter', sans-serif; font-size: 0.88rem;
+      color: var(--cream); outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
+    input::placeholder, textarea::placeholder { color: var(--text-dim); }
     input:focus, select:focus, textarea:focus {
-      border-color: var(--sage); box-shadow: 0 0 0 3px rgba(122,158,126,0.15);
+      border-color: var(--gold-border);
+      box-shadow: 0 0 0 3px rgba(201,160,90,0.08);
     }
-    textarea { height: 120px; resize: vertical; }
+    select option { background: var(--bg-3); }
+    textarea { height: 110px; resize: vertical; }
     .btn-submit {
       width: 100%; padding: 0.9rem;
-      background: var(--sage-dark); color: white;
-      border: none; border-radius: 50px; font-size: 1rem; font-weight: 700;
-      cursor: pointer; transition: all 0.25s; font-family: 'Inter', sans-serif;
+      background: var(--gold); color: var(--bg);
+      border: none; border-radius: 50px;
+      font-family: 'Inter', sans-serif; font-size: 0.78rem;
+      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.25s; margin-top: 0.5rem;
     }
-    .btn-submit:hover { background: var(--sage); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74,112,80,0.35); }
-    .form-note { font-size: 0.78rem; color: var(--light-text); text-align: center; margin-top: 0.75rem; }
+    .btn-submit:hover {
+      background: var(--gold-light); transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(201,160,90,0.3);
+    }
+    .form-note { font-size: 0.72rem; color: var(--text-dim); text-align: center; margin-top: 0.75rem; }
 
-    /* ============ FOOTER ============ */
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
     footer {
-      background: var(--dark); color: rgba(255,255,255,0.7);
-      padding: 3rem 5% 2rem;
+      background: var(--bg);
+      border-top: 1px solid var(--gold-border);
+      padding: 4rem 5% 2.5rem;
     }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.5rem; }
-    .footer-brand h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: white; margin-bottom: 0.75rem; }
-    .footer-brand p { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.6); max-width: 300px; }
-    .footer-col h4 { font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+    .footer-brand h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; color: var(--cream); margin-bottom: 0.75rem; font-weight: 500;
+    }
+    .footer-brand p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.8; max-width: 320px; }
+    .footer-addr { font-size: 0.78rem; color: var(--text-dim); margin-top: 1rem; line-height: 1.6; }
+    .footer-col h4 {
+      font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
     .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 0.5rem; }
-    .footer-col ul li a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
-    .footer-col ul li a:hover { color: var(--sage-light); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .footer-bottom p { font-size: 0.8rem; }
-    .footer-social { display: flex; gap: 1rem; }
-    .footer-social a {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: rgba(255,255,255,0.08); color: white;
-      display: flex; align-items: center; justify-content: center;
-      text-decoration: none; font-size: 0.9rem; transition: background 0.2s;
+    .footer-col li { margin-bottom: 0.6rem; }
+    .footer-col a {
+      color: var(--text-dim); text-decoration: none;
+      font-size: 0.85rem; transition: color 0.2s;
     }
-    .footer-social a:hover { background: var(--sage); }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-size: 0.75rem; color: var(--text-dim); }
+    .footer-social { display: flex; gap: 0.75rem; }
+    .footer-social a {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--bg-3); border: 1px solid var(--border);
+      color: var(--text-dim); display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .footer-social a:hover { border-color: var(--gold-border); color: var(--gold); }
 
-    /* ============ ANIMATIONS ============ */
+    /* ═══════════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════════ */
     .fade-up {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
     .fade-up:nth-child(2) { transition-delay: 0.1s; }
     .fade-up:nth-child(3) { transition-delay: 0.2s; }
     .fade-up:nth-child(4) { transition-delay: 0.3s; }
 
-    /* ============ MOBILE ============ */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding-top: 6rem; }
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; padding-top: 7rem; gap: 3rem; }
       .hero-visual { order: -1; }
-      .hero-mosaic { grid-template-rows: 200px 150px; }
-      .gites-grid, .domaine-grid, .equestre-grid, .contact-grid, .localisation-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .domaine-gallery-stack { height: 280px; }
-      .domaine-gallery-stack img:last-child { display: none; }
+      .hero-mosaic { grid-template-rows: 200px 130px; }
+      .domaine-grid, .equestre-grid, .contact-grid, .loc-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .gites-grid { grid-template-columns: 1fr; }
+      .dom-stack { height: 300px; }
+      .dom-stack img:last-child { display: none; }
       .gallery-masonry { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .faq-grid { grid-template-columns: 1fr; }
-      nav { padding: 1rem 4%; }
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--warm-white); padding: 1.5rem 5%; border-bottom: 1px solid var(--border); }
-      .nav-links.open { display: flex; }
-      .nav-toggle { display: flex; }
     }
-
     @media (max-width: 600px) {
-      h1 { font-size: 1.8rem; }
-      .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
-      .gallery-masonry { grid-template-columns: 1fr 1fr; }
-      .gallery-masonry .g-item.wide, .gallery-masonry .g-item.tall { grid-column: span 1; grid-row: span 1; }
-      .equestre-features { grid-template-columns: 1fr; }
+      h1 { font-size: 2rem; }
+      .hero-stats { flex-wrap: wrap; }
+      .hero-stat { flex: 0 0 48%; }
       .form-row { grid-template-columns: 1fr; }
+      .eq-features { grid-template-columns: 1fr; }
+      .gallery-masonry .g-item.wide, .gallery-masonry .g-item.tall { grid-column: span 1; grid-row: span 1; }
+      nav { padding: 1rem 4%; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: rgba(19,19,14,0.98);
+        border-bottom: 1px solid var(--gold-border);
+        padding: 1.5rem 5%;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- ═══ NAVIGATION ═══ -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">🐎 <span>L'Arche</span> du Négadis</a>
+  <a href="#" class="nav-logo">
+    <img src="images/logo-arche-negadis.png" alt="Logo Gîte Rural L'Arche du Négadis Paulhan Hérault">
+    <div class="nav-logo-text">L'Arche du Négadis<span>Gîte Rural · Paulhan (34)</span></div>
+  </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#gites">Nos Gîtes</a></li>
-    <li><a href="#domaine">Le Domaine</a></li>
-    <li><a href="#equestre">Espace Équestre</a></li>
+    <li><a href="#gites">Gîtes</a></li>
+    <li><a href="#domaine">Domaine</a></li>
+    <li><a href="#equestre">Équestre</a></li>
     <li><a href="#localisation">Localisation</a></li>
-    <li><a href="#contact" class="nav-cta">Nous Contacter</a></li>
+    <li><a href="#contact" class="nav-cta">Réserver</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="home">
+<!-- ═══ HERO ═══ -->
+<section class="hero s-dark" id="home">
   <div class="hero-content">
-    <div class="hero-badge">🌿 Gîte Équestre Certifié · Paulhan, Hérault</div>
+    <div class="hero-eyebrow">
+      <span>Paulhan · Hérault · Occitanie</span>
+    </div>
     <h1>
       Séjournez au cœur<br>des vignes &
       <em>des mini-chevaux</em>
     </h1>
     <p class="hero-desc">
-      Un domaine d'exception à Paulhan, en plein Languedoc. Venez seul, en famille ou avec votre cheval — la nature, le calme et l'authenticité vous attendent à L'Arche du Négadis.
+      Un domaine d'exception niché entre les vignes du Languedoc. Venez seul, en famille ou avec votre cheval — la nature, le calme et l'authenticité vous attendent.
     </p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">📅 Vérifier les disponibilités</a>
-      <a href="#gites" class="btn-secondary">Voir les gîtes →</a>
+      <a href="#contact" class="btn-gold">Vérifier les disponibilités</a>
+      <a href="#gites" class="btn-outline">Découvrir les gîtes</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><span class="number">2</span><span class="label">Gîtes</span></div>
-      <div class="hero-stat"><span class="number">2 ha</span><span class="label">de prairies</span></div>
-      <div class="hero-stat"><span class="number">10 min</span><span class="label">de Pézenas</span></div>
-      <div class="hero-stat"><span class="number">4★</span><span class="label">Confort</span></div>
+      <div class="hero-stat"><span class="num">2</span><span class="lbl">Gîtes</span></div>
+      <div class="hero-stat"><span class="num">2 ha</span><span class="lbl">Prairies</span></div>
+      <div class="hero-stat"><span class="num">10'</span><span class="lbl">de Pézenas</span></div>
+      <div class="hero-stat"><span class="num">A75</span><span class="lbl">à 5 min</span></div>
     </div>
   </div>
   <div class="hero-visual">
     <div class="hero-mosaic">
-      <img class="img-main" src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-01.webp" alt="Séjour lumineux du gîte L'Arche du Négadis, Paulhan Hérault" loading="eager">
-      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp" alt="Terrasse du gîte avec vue sur les vignes, Paulhan Hérault" loading="eager">
-      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-02.webp" alt="Boxes chevaux du domaine équestre L'Arche du Négadis" loading="eager">
+      <img class="main" src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-01.webp" alt="Séjour lumineux du gîte L'Arche du Négadis, Paulhan Hérault" loading="eager">
+      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp" alt="Terrasse gîte équestre Paulhan" loading="eager">
+      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-02.webp" alt="Boxes chevaux domaine Arche du Négadis" loading="eager">
     </div>
-    <div class="hero-badge-float">
-      <span class="badge-icon">🐴</span>
-      <div class="badge-text">
-        <strong>Pension équine incluse</strong>
-        Box & paddock disponibles pour vos chevaux
+    <div class="hero-float">
+      <span class="fi">🐴</span>
+      <div class="ft">
+        <strong>Pension équine sur place</strong>
+        <span>Box &amp; paddock disponibles</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- USP STRIP -->
+<!-- ═══ USP STRIP ═══ -->
 <div class="usp-strip">
-  <div class="usp-item"><span class="usp-icon">🌊</span><span>20 min du Lac du Salagou</span></div>
-  <div class="usp-item"><span class="usp-icon">🏇</span><span>Pension chevaux sur place</span></div>
-  <div class="usp-item"><span class="usp-icon">❄️</span><span>Climatisation & tout confort</span></div>
-  <div class="usp-item"><span class="usp-icon">🍷</span><span>Au cœur des vignes du Languedoc</span></div>
-  <div class="usp-item"><span class="usp-icon">🛣️</span><span>A75 à 5 min</span></div>
+  <div class="usp-item"><span class="ui">🌊</span><strong>20 min</strong>&nbsp;du Lac du Salagou</div>
+  <div class="usp-item"><span class="ui">🏇</span><strong>Pension chevaux</strong>&nbsp;sur place</div>
+  <div class="usp-item"><span class="ui">❄️</span><strong>Climatisation</strong>&nbsp;tout confort</div>
+  <div class="usp-item"><span class="ui">🍷</span><strong>Vignes</strong>&nbsp;du Languedoc</div>
+  <div class="usp-item"><span class="ui">🛣️</span><strong>A75</strong>&nbsp;à 5 min</div>
 </div>
 
-<!-- GITES -->
-<section class="gites" id="gites">
+<!-- ═══ GITES ═══ -->
+<section class="s-light" id="gites">
   <div class="section-header fade-up">
-    <span class="section-label">Nos Hébergements</span>
+    <span class="label">Nos Hébergements</span>
     <h2>Deux gîtes, une âme</h2>
-    <p>Appartement spacieux pour les familles ou maisonnette intime avec vue sur les chevaux — choisissez votre parenthèse en Languedoc.</p>
+    <span class="h2-divider"></span>
+    <p>Appartement spacieux pour les familles ou maisonnette intime face aux chevaux — choisissez votre parenthèse en Languedoc.</p>
   </div>
 
   <div class="gites-grid">
-    <!-- Gîte 1 : Appartement -->
+    <!-- Appartement T2 -->
     <article class="gite-card fade-up" itemscope itemtype="https://schema.org/Apartment">
       <div class="gite-gallery" id="gallery1">
+        <div class="gite-overlay"></div>
         <span class="gite-tag">⭐ Coup de cœur</span>
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-01.webp" alt="Séjour appartement T2 gîte équestre Paulhan Hérault" class="active" itemprop="image" loading="lazy">
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-02.webp" alt="Cuisine équipée appartement gîte Arche du Négadis" loading="lazy">
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-02.webp" alt="Terrasse jardin privatisé gîte Paulhan" loading="lazy">
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-01.webp" alt="Chambre appartement T2 gîte L'Arche du Négadis" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-01.webp" alt="Cuisine ouverte appartement T2 gîte équestre Paulhan Hérault" class="active" itemprop="image" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-02.webp" alt="Séjour appartement T2 vue vignes gîte Arche du Négadis" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-03.webp" alt="Lave-linge et vue sur vignes appartement T2 Paulhan" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp" alt="Terrasse jardin privatisé appartement T2 gîte Paulhan" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-02.webp" alt="Jardin avec barbecue appartement T2 gîte Arche du Négadis" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-01.webp" alt="Chambre appartement T2 gîte L'Arche du Négadis Paulhan" loading="lazy">
         <div class="gallery-dots" id="dots1"></div>
       </div>
       <div class="gite-body">
         <h3 itemprop="name">Appartement T2 — 1er Étage</h3>
-        <div class="gite-subtitle">49 m² · jusqu'à 4 personnes · Vue sur les vignes</div>
+        <div class="gite-sub">49 m² · jusqu'à 4 personnes · Vue sur les vignes</div>
         <p class="gite-desc" itemprop="description">
-          Entièrement rénové, lumineux et climatisé, cet appartement de caractère offre une vue dégagée exceptionnelle sur les vignes du Languedoc. Idéal pour les familles, les cavaliers en itinérance et les amoureux de nature.
+          Entièrement rénové, lumineux et climatisé. Vue dégagée sur les vignes du Languedoc, grand jardin privatisé avec barbecue. Idéal pour les familles et les cavaliers en itinérance.
         </p>
         <div class="gite-features">
-          <span class="feature-chip">🛏️ Grande chambre</span>
-          <span class="feature-chip">🛋️ Clic-clac salon</span>
-          <span class="feature-chip">🍳 Cuisine équipée</span>
-          <span class="feature-chip">🫧 Lave-vaisselle</span>
-          <span class="feature-chip">👔 Lave-linge</span>
-          <span class="feature-chip">❄️ Climatisation</span>
-          <span class="feature-chip">🚿 Douche italienne</span>
-          <span class="feature-chip">🌿 Jardin privatisé</span>
-          <span class="feature-chip">🔥 Barbecue</span>
-          <span class="feature-chip">🚗 Parking privé</span>
+          <span class="feat">🛏️ Grande chambre</span>
+          <span class="feat">🛋️ Clic-clac</span>
+          <span class="feat">🍳 Cuisine équipée</span>
+          <span class="feat">🫧 Lave-vaisselle</span>
+          <span class="feat">👔 Lave-linge</span>
+          <span class="feat">❄️ Climatisation</span>
+          <span class="feat">🚿 Douche italienne</span>
+          <span class="feat">🌿 Jardin privatisé</span>
+          <span class="feat">🔥 Barbecue</span>
+          <span class="feat">🚗 Parking privé</span>
         </div>
         <div class="gite-footer">
           <div class="gite-price">Sur devis <span>/ nuit ou semaine</span></div>
-          <a href="#contact" class="btn-gite">Demander le tarif</a>
+          <a href="#contact" class="btn-gold" style="font-size:0.72rem;padding:0.55rem 1.2rem;">Demander le tarif</a>
         </div>
       </div>
     </article>
 
-    <!-- Gîte 2 : Mobil-home -->
+    <!-- Maisonnette -->
     <article class="gite-card fade-up" itemscope itemtype="https://schema.org/Accommodation">
       <div class="gite-gallery" id="gallery2">
+        <div class="gite-overlay"></div>
         <span class="gite-tag">🐴 Vue chevaux</span>
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-02.webp" alt="Maisonnette gîte équestre vue chevaux Paulhan Hérault" class="active" itemprop="image" loading="lazy">
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-04.webp" alt="Chambre maisonnette gîte nature Languedoc" loading="lazy">
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-03.webp" alt="Terrasse maisonnette gîte L'Arche du Négadis" loading="lazy">
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-05.webp" alt="Intérieur maisonnette gîte saisonnier Paulhan" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-05.webp" alt="Terrasse maisonnette avec vue directe sur les mini-chevaux Paulhan" class="active" itemprop="image" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-04.webp" alt="Salon et cuisine maisonnette gîte saisonnier Arche du Négadis" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-04.webp" alt="Chambre maisonnette gîte nature Languedoc Paulhan" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-03.webp" alt="Extérieur domaine maisonnette gîte Arche du Négadis" loading="lazy">
         <div class="gallery-dots" id="dots2"></div>
       </div>
       <div class="gite-body">
         <h3 itemprop="name">Maisonnette — Nature & Mini-Chevaux</h3>
-        <div class="gite-subtitle">30 m² · 2-3 personnes · Vue directe sur les chevaux</div>
+        <div class="gite-sub">30 m² · 2-3 personnes · Vue directe sur les chevaux</div>
         <p class="gite-desc" itemprop="description">
-          Une parenthèse insolite à deux pas des mini-chevaux américains. Maisonnette rénovée, climatisée, avec sa terrasse ensoleillée. Une expérience rare où vous vous endormez et réveillez face aux chevaux.
+          Une expérience insolite face aux mini-chevaux américains. Maisonnette rénovée et climatisée avec sa terrasse ensoleillée. Vous vous endormez et réveillez face aux chevaux.
         </p>
         <div class="gite-features">
-          <span class="feature-chip">🛏️ 2 chambres</span>
-          <span class="feature-chip">🍳 Cuisine équipée</span>
-          <span class="feature-chip">🛋️ Salon cosy</span>
-          <span class="feature-chip">❄️ Climatisation</span>
-          <span class="feature-chip">🌞 Terrasse</span>
-          <span class="feature-chip">💻 Coin télétravail</span>
-          <span class="feature-chip">🐴 Vue mini-chevaux</span>
-          <span class="feature-chip">🚗 Parking privé</span>
+          <span class="feat">🛏️ 2 chambres</span>
+          <span class="feat">🍳 Cuisine équipée</span>
+          <span class="feat">🛋️ Salon cosy</span>
+          <span class="feat">❄️ Climatisation</span>
+          <span class="feat">🌞 Terrasse</span>
+          <span class="feat">💻 Coin télétravail</span>
+          <span class="feat">🐴 Vue mini-chevaux</span>
+          <span class="feat">🚗 Parking privé</span>
         </div>
         <div class="gite-footer">
           <div class="gite-price">À partir de <span>/ semaine</span></div>
-          <a href="#contact" class="btn-gite">Demander le tarif</a>
+          <a href="#contact" class="btn-gold" style="font-size:0.72rem;padding:0.55rem 1.2rem;">Demander le tarif</a>
         </div>
       </div>
     </article>
   </div>
 </section>
 
-<!-- DOMAINE -->
-<section class="domaine" id="domaine">
+<!-- ═══ DOMAINE ═══ -->
+<section class="s-dark" id="domaine">
   <div class="domaine-grid">
-    <div class="domaine-gallery-stack fade-up">
+    <div class="dom-stack fade-up">
       <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-03.webp" alt="Extérieur domaine L'Arche du Négadis entre vignes et nature, Paulhan Hérault" loading="lazy">
-      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp" alt="Terrasse gîte avec vue vignes et nature Languedoc" loading="lazy">
+      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp" alt="Terrasse gîte vue vignes Languedoc" loading="lazy">
     </div>
-    <div class="domaine-content fade-up">
-      <span class="section-label">Le Domaine</span>
+    <div class="fade-up">
+      <span class="label">Le Domaine</span>
       <h2>Un écrin de nature au cœur du Languedoc</h2>
-      <p>
-        L'Arche du Négadis, c'est bien plus qu'un hébergement. C'est un domaine vivant, habité par la passion des animaux et l'amour du territoire. Perché entre les vignes de Paulhan, à équidistance de la mer et des garrigues, c'est le point de départ idéal pour explorer l'Hérault.
-      </p>
-      <p>
-        Élevage familial de <strong>mini-chevaux américains</strong> et de <strong>Braque de Weimar</strong>, l'Arche offre une immersion rare dans un quotidien authentique et apaisant.
-      </p>
-      <div class="domaine-pillars">
+      <span class="h2-divider"></span>
+      <p>L'Arche du Négadis est bien plus qu'un hébergement. C'est un domaine vivant, habité par la passion des animaux et l'amour du territoire. Perché entre les vignes de Paulhan, c'est le point de départ idéal pour explorer l'Hérault à cheval.</p>
+      <p style="margin-top:1rem;">Élevage familial de <strong style="color:var(--cream);">mini-chevaux américains AMHA</strong> et de <strong style="color:var(--cream);">Braque de Weimar</strong>, l'Arche offre une immersion rare dans un quotidien authentique.</p>
+      <div class="dom-pillars">
         <div class="pillar">
           <span class="pillar-icon">🐎</span>
-          <div class="pillar-text">
-            <h4>Mini-chevaux américains</h4>
+          <div>
+            <h4>Mini-chevaux américains AMHA</h4>
             <p>Sociabilisés, en liberté dans les prairies — une rencontre inoubliable pour petits et grands.</p>
           </div>
         </div>
         <div class="pillar">
           <span class="pillar-icon">🐕</span>
-          <div class="pillar-text">
+          <div>
             <h4>Élevage Braque de Weimar</h4>
             <p>Un élevage LOF sélectionné pour la qualité génétique et l'équilibre comportemental.</p>
           </div>
         </div>
         <div class="pillar">
           <span class="pillar-icon">🌿</span>
-          <div class="pillar-text">
+          <div>
             <h4>2 hectares de prairies naturelles</h4>
-            <p>Entre les vignes et les garriques, un espace préservé pour se ressourcer vraiment.</p>
+            <p>Entre les vignes et la garrigue, un espace préservé pour se ressourcer vraiment.</p>
           </div>
         </div>
       </div>
@@ -827,207 +1002,190 @@
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery" id="galerie" aria-label="Galerie photos des gîtes L'Arche du Négadis">
-  <div class="section-header fade-up" style="text-align:center;">
-    <span class="section-label">Galerie</span>
+<!-- ═══ GALERIE ═══ -->
+<section class="s-light" id="galerie" aria-label="Galerie photos des gîtes L'Arche du Négadis">
+  <div class="section-center fade-up">
+    <span class="label">Galerie</span>
     <h2>Un aperçu de votre séjour</h2>
+    <span class="h2-divider"></span>
   </div>
-  <div class="gallery-masonry" id="galleryGrid">
-    <div class="g-item tall" onclick="openLightbox(0)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-01.webp" alt="Séjour gîte T2 Paulhan Hérault" loading="lazy"></div>
-    <div class="g-item" onclick="openLightbox(1)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp" alt="Terrasse gîte vue vignes Languedoc" loading="lazy"></div>
-    <div class="g-item" onclick="openLightbox(2)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-01.webp" alt="Extérieur gîte nature Hérault" loading="lazy"></div>
-    <div class="g-item" onclick="openLightbox(3)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-02.webp" alt="Cuisine moderne gîte rénové Paulhan" loading="lazy"></div>
-    <div class="g-item wide" onclick="openLightbox(4)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-02.webp" alt="Boxes chevaux domaine équestre Arche du Négadis" loading="lazy"></div>
-    <div class="g-item" onclick="openLightbox(5)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-01.webp" alt="Chambre gîte T2 confortable Paulhan" loading="lazy"></div>
-    <div class="g-item" onclick="openLightbox(6)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-02.webp" alt="Jardin privatisé gîte Languedoc" loading="lazy"></div>
-    <div class="g-item" onclick="openLightbox(7)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-04.webp" alt="Chambre maisonnette gîte saisonnier" loading="lazy"></div>
-    <div class="g-item" onclick="openLightbox(8)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-03.webp" alt="Séjour lumineux gîte Hérault" loading="lazy"></div>
-    <div class="g-item" onclick="openLightbox(9)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-03.webp" alt="Vue extérieure domaine Arche du Négadis Paulhan" loading="lazy"></div>
-    <div class="g-item" onclick="openLightbox(10)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-03.webp" alt="Terrasse maisonnette gîte nature Paulhan" loading="lazy"></div>
-    <div class="g-item" onclick="openLightbox(11)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-04.webp" alt="Domaine gîte équestre L'Arche du Négadis" loading="lazy"></div>
+  <!-- Galerie organisée : T2 en haut, Maisonnette en bas -->
+  <div class="gallery-masonry">
+    <!-- Appartement T2 -->
+    <div class="g-item tall" onclick="openLb(0)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-01.webp" alt="Appartement T2 — Cuisine ouverte avec vue vignes, Paulhan Hérault" loading="lazy"></div>
+    <div class="g-item" onclick="openLb(1)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-02.webp" alt="Appartement T2 — Séjour lumineux gîte Arche du Négadis" loading="lazy"></div>
+    <div class="g-item" onclick="openLb(2)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-03.webp" alt="Appartement T2 — Vue sur les vignes depuis la cuisine" loading="lazy"></div>
+    <div class="g-item" onclick="openLb(3)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-01.webp" alt="Appartement T2 — Chambre confortable Paulhan" loading="lazy"></div>
+    <div class="g-item wide" onclick="openLb(4)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp" alt="Appartement T2 — Terrasse jardin privatisé avec barbecue" loading="lazy"></div>
+    <div class="g-item" onclick="openLb(5)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-02.webp" alt="Appartement T2 — Jardin et salon extérieur privatisé" loading="lazy"></div>
+    <!-- Maisonnette -->
+    <div class="g-item tall" onclick="openLb(6)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-05.webp" alt="Maisonnette — Terrasse avec vue directe sur les mini-chevaux" loading="lazy"></div>
+    <div class="g-item" onclick="openLb(7)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-04.webp" alt="Maisonnette — Salon cosy et cuisine équipée" loading="lazy"></div>
+    <div class="g-item" onclick="openLb(8)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-04.webp" alt="Maisonnette — Chambre avec décor équestre" loading="lazy"></div>
+    <div class="g-item wide" onclick="openLb(9)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-03.webp" alt="Maisonnette — Vue extérieure du domaine Arche du Négadis" loading="lazy"></div>
+    <!-- Domaine -->
+    <div class="g-item" onclick="openLb(10)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-01.webp" alt="Domaine équestre L'Arche du Négadis, Paulhan" loading="lazy"></div>
+    <div class="g-item" onclick="openLb(11)"><img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-02.webp" alt="Boxes chevaux — Pension équestre L'Arche du Négadis" loading="lazy"></div>
   </div>
 </section>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionneuse de photos">
-  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fermer">✕</button>
-  <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)" aria-label="Photo précédente">‹</button>
-  <img id="lightboxImg" src="" alt="">
-  <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)" aria-label="Photo suivante">›</button>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lb-close" onclick="closeLb()" aria-label="Fermer">✕</button>
+  <button class="lb-nav lb-prev" onclick="navLb(-1)" aria-label="Précédent">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" onclick="navLb(1)" aria-label="Suivant">›</button>
 </div>
 
-<!-- EQUESTRE -->
-<section class="equestre" id="equestre" aria-label="Espace équestre et pension chevaux">
+<!-- ═══ EQUESTRE ═══ -->
+<section class="equestre" id="equestre">
   <div class="equestre-grid">
-    <div>
-      <span class="section-label">Espace Équestre</span>
+    <div class="fade-up">
+      <span class="label">Espace Équestre</span>
       <h2>Votre cheval est le bienvenu</h2>
-      <p style="margin:1rem 0 0.5rem;">
-        L'Arche du Négadis est un <strong style="color:white;">véritable gîte équestre</strong>. Vous êtes cavalier de randonnée, en itinérance ou simplement amoureux de vos chevaux ? Venez avec eux — nous avons tout prévu.
-      </p>
-      <p>
-        Box individuels, paddocks, carrière, 2 hectares de prairies naturelles et une surveillance 24h/24 des gérants sur place. Votre cheval sera entre de bonnes mains.
-      </p>
-      <div class="equestre-features">
-        <div class="eq-feature">
-          <span class="ef-icon">🏠</span>
+      <span class="h2-divider"></span>
+      <p>L'Arche du Négadis est un véritable <strong style="color:var(--cream);">gîte équestre</strong>. Cavalier de randonnée, en itinérance ou amoureux de vos chevaux — venez avec eux, nous avons tout prévu.</p>
+      <p style="margin-top:0.75rem;">Box individuels, paddocks, carrière, 2 hectares de prairies et une surveillance 24h/24 par les gérants sur place.</p>
+      <div class="eq-features">
+        <div class="eq-feat">
+          <span class="efi">🏠</span>
           <h4>Box individuels</h4>
-          <p>Avec accès quotidien au paddock, alimentation incluse</p>
+          <p>Accès quotidien paddock, alimentation incluse</p>
         </div>
-        <div class="eq-feature">
-          <span class="ef-icon">🌾</span>
+        <div class="eq-feat">
+          <span class="efi">🌾</span>
           <h4>Prairies naturelles</h4>
-          <p>2 ha entre les vignes pour vos chevaux en semi-liberté</p>
+          <p>2 ha entre les vignes pour semi-liberté</p>
         </div>
-        <div class="eq-feature">
-          <span class="ef-icon">🗺️</span>
+        <div class="eq-feat">
+          <span class="efi">🗺️</span>
           <h4>Randonnées au départ</h4>
-          <p>Vignes, rivière Hérault, Lac du Salagou accessibles</p>
+          <p>Vignes, Hérault, Lac du Salagou accessibles</p>
         </div>
-        <div class="eq-feature">
-          <span class="ef-icon">👁️</span>
+        <div class="eq-feat">
+          <span class="efi">👁️</span>
           <h4>Surveillance 24h/24</h4>
-          <p>Gérants sur place, coordination vétérinaire assurée</p>
+          <p>Gérants sur place, suivi vétérinaire assuré</p>
         </div>
       </div>
       <div class="note-chiens">
-        <strong>⚠️ Note importante :</strong> Afin de préserver la tranquillité des lieux et le bien-être des animaux de l'élevage, les chiens de compagnie ne sont pas admis dans les gîtes.
+        <strong>Note importante :</strong> Afin de préserver la tranquillité des lieux et le bien-être des animaux de l'élevage, les chiens de compagnie ne sont pas admis.
       </div>
     </div>
-    <div class="equestre-image">
-      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-02.webp" alt="Boxes et infrastructures équestres du domaine L'Arche du Négadis, pension chevaux Hérault" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- LOCALISATION -->
-<section class="localisation" id="localisation">
-  <div class="section-header fade-up" style="text-align:center;">
-    <span class="section-label">Localisation</span>
-    <h2>Au cœur de l'Hérault, tout proche de tout</h2>
-    <p style="max-width:600px;margin:0 auto;">Paulhan est un carrefour idéal entre mer, garrigues et arrière-pays languedocien. En van comme en voiture, on vient de partout.</p>
-  </div>
-  <div class="localisation-grid" style="margin-top:3rem;">
-    <div class="fade-up">
-      <div class="distances-list">
-        <div class="distance-item"><span class="distance-name"><span class="icon">🏛️</span>Pézenas</span><span class="distance-time">10 min</span></div>
-        <div class="distance-item"><span class="distance-name"><span class="icon">🏖️</span>Lac du Salagou</span><span class="distance-time">20 min</span></div>
-        <div class="distance-item"><span class="distance-name"><span class="icon">🏞️</span>Gorges de l'Hérault</span><span class="distance-time">25 min</span></div>
-        <div class="distance-item"><span class="distance-name"><span class="icon">⛵</span>Sète · Agde · Mèze</span><span class="distance-time">30 min</span></div>
-        <div class="distance-item"><span class="distance-name"><span class="icon">🌆</span>Béziers</span><span class="distance-time">30 min</span></div>
-        <div class="distance-item"><span class="distance-name"><span class="icon">🌆</span>Montpellier</span><span class="distance-time">40 min</span></div>
-        <div class="distance-item"><span class="distance-name"><span class="icon">🛣️</span>Autoroute A75</span><span class="distance-time">5 min</span></div>
-        <div class="distance-item"><span class="distance-name"><span class="icon">🛣️</span>Autoroute A9</span><span class="distance-time">30 min</span></div>
-      </div>
-    </div>
-    <div class="fade-up">
-      <div class="map-embed">
-        <div class="map-placeholder">
-          <span class="map-icon">📍</span>
-          <p><strong>Chemin du Négadis<br>34230 Paulhan, Hérault</strong></p>
-          <a href="https://www.google.fr/maps/search/Chemin+du+Negadis+34230+Paulhan" target="_blank" rel="noopener">
-            Ouvrir dans Google Maps →
-          </a>
-        </div>
+    <div class="equestre-img fade-up">
+      <div style="display:grid; grid-template-rows: 1fr 1fr; gap: 8px; height: 440px;">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-02.webp"
+             alt="Boxes individuels du domaine équestre L'Arche du Négadis, pension chevaux Hérault"
+             loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:14px 14px 0 0;">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-03.webp"
+             alt="Paddock et carrière du gîte équestre L'Arche du Négadis Paulhan"
+             loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:0 0 14px 14px;">
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="section-header fade-up" style="text-align:center;">
-    <span class="section-label">Questions fréquentes</span>
+<!-- ═══ LOCALISATION ═══ -->
+<section class="s-dark" id="localisation">
+  <div class="section-center fade-up">
+    <span class="label">Localisation</span>
+    <h2>Au cœur de l'Hérault, proche de tout</h2>
+    <span class="h2-divider"></span>
+    <p>Paulhan est le carrefour idéal entre mer, garrigues et arrière-pays languedocien. En van comme en voiture, on vient de partout.</p>
+  </div>
+  <div class="loc-grid">
+    <div class="dist-list fade-up">
+      <div class="dist-item"><span class="dist-name"><span class="di">🏛️</span>Pézenas</span><span class="dist-time">10 min</span></div>
+      <div class="dist-item"><span class="dist-name"><span class="di">🏖️</span>Lac du Salagou</span><span class="dist-time">20 min</span></div>
+      <div class="dist-item"><span class="dist-name"><span class="di">🏞️</span>Gorges de l'Hérault</span><span class="dist-time">25 min</span></div>
+      <div class="dist-item"><span class="dist-name"><span class="di">⛵</span>Sète · Agde · Mèze</span><span class="dist-time">30 min</span></div>
+      <div class="dist-item"><span class="dist-name"><span class="di">🌆</span>Béziers</span><span class="dist-time">30 min</span></div>
+      <div class="dist-item"><span class="dist-name"><span class="di">🌆</span>Montpellier</span><span class="dist-time">40 min</span></div>
+      <div class="dist-item"><span class="dist-name"><span class="di">🛣️</span>Autoroute A75</span><span class="dist-time">5 min</span></div>
+      <div class="dist-item"><span class="dist-name"><span class="di">🛣️</span>Autoroute A9</span><span class="dist-time">30 min</span></div>
+    </div>
+    <div class="map-box fade-up">
+      <div class="map-inner">
+        <span class="map-icon">📍</span>
+        <address>
+          <strong style="color:var(--cream);font-size:1rem;font-family:'Cormorant Garamond',serif;">L'Arche du Négadis</strong><br>
+          Chemin du Négadis<br>
+          34230 Paulhan, Hérault
+        </address>
+        <a href="https://www.google.fr/maps/search/Chemin+du+Negadis+34230+Paulhan" target="_blank" rel="noopener">
+          Ouvrir dans Google Maps →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="s-light" id="faq">
+  <div class="section-center fade-up">
+    <span class="label">Questions fréquentes</span>
     <h2>Tout ce que vous voulez savoir</h2>
+    <span class="h2-divider"></span>
   </div>
-  <div class="faq-grid fade-up">
+  <div class="faq-grid">
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Peut-on venir avec son cheval ? <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer"><p>Oui ! Box individuel et/ou paddock disponibles selon vos besoins. Idéal pour les cavaliers en randonnée itinérante ou en séjour de découverte de l'Hérault à cheval.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)">Peut-on venir avec son cheval ? <span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Oui ! Box individuel et/ou paddock disponibles selon vos besoins. Idéal pour les cavaliers en randonnée itinérante ou en séjour de découverte de l'Hérault à cheval.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Les chiens sont-ils acceptés ? <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer"><p>Non, afin de préserver la tranquillité du lieu et le bien-être des animaux de l'élevage (mini-chevaux et Braque de Weimar), les chiens de compagnie ne sont pas admis.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)">Les chiens sont-ils acceptés ? <span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Non, afin de préserver la tranquillité du lieu et le bien-être des animaux de l'élevage (mini-chevaux et Braque de Weimar), les chiens de compagnie ne sont pas admis.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Quelle est la durée minimale de séjour ? <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer"><p>La maisonnette est proposée à la semaine en saison estivale. L'appartement T2 est disponible pour des week-ends ou des séjours à la semaine. Contactez-nous pour les disponibilités exactes.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)">Quelle est la durée minimale ? <span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>La maisonnette est proposée à la semaine en saison estivale. L'appartement T2 est disponible pour des week-ends ou des séjours à la semaine. Contactez-nous pour les disponibilités.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Le télétravail est-il possible ? <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer"><p>Oui ! Les deux hébergements disposent d'une connexion WiFi et d'un coin bureau (surtout la maisonnette). Un cadre inspirant pour les digital nomads qui veulent travailler au vert.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)">Le télétravail est-il possible ? <span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Oui ! WiFi disponible, les deux hébergements disposent d'un coin bureau. Un cadre inspirant pour les digital nomads qui veulent travailler au vert.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Y a-t-il un barbecue et jardin ? <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer"><p>L'appartement T2 dispose d'un grand jardin privatisé avec salon de jardin, barbecue et table extérieure. La maisonnette bénéficie d'une terrasse ensoleillée.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)">Y a-t-il barbecue et jardin ? <span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>L'appartement T2 dispose d'un grand jardin privatisé avec salon de jardin, barbecue et table extérieure. La maisonnette bénéficie d'une terrasse ensoleillée.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Peut-on se baigner à cheval ? <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer"><p>Oui ! La rivière Hérault est accessible en randonnée depuis le domaine. Le Lac du Salagou (20 min en van) permet également la baignade à cheval dans un cadre volcanique spectaculaire.</p></div>
+      <button class="faq-q" onclick="toggleFaq(this)">Baignade à cheval possible ? <span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Oui ! La rivière Hérault est accessible en randonnée depuis le domaine. Le Lac du Salagou (20 min en van) permet la baignade à cheval dans un cadre volcanique spectaculaire.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
+<!-- ═══ CONTACT ═══ -->
+<section class="s-dark" id="contact">
   <div class="contact-grid">
-    <div class="contact-info fade-up">
-      <span class="section-label">Contact & Réservation</span>
-      <h2>Planifions votre séjour ensemble</h2>
-      <p>Disponibilités, tarifs, accueil de vos chevaux — envoyez-nous un message ou appelez directement. Nous vous répondons sous 24h.</p>
+    <div class="fade-up">
+      <span class="label">Contact & Réservation</span>
+      <h2>Planifions votre séjour</h2>
+      <span class="h2-divider"></span>
+      <p>Disponibilités, tarifs, accueil de vos chevaux — envoyez-nous un message ou appelez directement. Réponse garantie sous 24h.</p>
       <div class="contact-links">
         <a href="tel:+33620557867" class="contact-link">
-          <span class="cl-icon">📞</span>
-          <div class="cl-text">
-            <strong>06 20 55 78 67</strong>
-            <span>Disponible 7j/7, de préférence en journée</span>
-          </div>
+          <span class="cl-i">📞</span>
+          <div><strong>06 20 55 78 67</strong><span>7j/7, de préférence en journée</span></div>
         </a>
         <a href="mailto:sarahespinas@gmail.com" class="contact-link">
-          <span class="cl-icon">✉️</span>
-          <div class="cl-text">
-            <strong>sarahespinas@gmail.com</strong>
-            <span>Réponse sous 24h</span>
-          </div>
+          <span class="cl-i">✉️</span>
+          <div><strong>sarahespinas@gmail.com</strong><span>Réponse sous 24h</span></div>
         </a>
         <a href="https://arche-negadis.fr" target="_blank" rel="noopener" class="contact-link">
-          <span class="cl-icon">🌐</span>
-          <div class="cl-text">
-            <strong>arche-negadis.fr</strong>
-            <span>Site officiel du domaine</span>
-          </div>
+          <span class="cl-i">🌐</span>
+          <div><strong>arche-negadis.fr</strong><span>Site officiel du domaine</span></div>
         </a>
         <a href="https://www.google.fr/maps/search/Chemin+du+Negadis+34230+Paulhan" target="_blank" rel="noopener" class="contact-link">
-          <span class="cl-icon">📍</span>
-          <div class="cl-text">
-            <strong>Chemin du Négadis, 34230 Paulhan</strong>
-            <span>Voir l'itinéraire sur Google Maps</span>
-          </div>
+          <span class="cl-i">📍</span>
+          <div><strong>Chemin du Négadis, 34230 Paulhan</strong><span>Voir l'itinéraire</span></div>
         </a>
       </div>
     </div>
 
     <div class="contact-form fade-up">
       <h3>Demande de disponibilités</h3>
-      <form
-        action="https://formspree.io/f/xovewvbk"
-        method="POST"
-        onsubmit="handleFormSubmit(event)"
-        novalidate
-      >
+      <form action="https://formspree.io/f/xovewvbk" method="POST" onsubmit="handleForm(event)" novalidate>
         <div class="form-row">
           <div class="form-group">
             <label for="prenom">Prénom *</label>
@@ -1068,23 +1226,24 @@
         </div>
         <div class="form-group">
           <label for="message">Dates souhaitées & message *</label>
-          <textarea id="message" name="message" placeholder="Ex: Du 2 au 9 août, 2 adultes + 1 enfant. Nous venons avec 1 cheval. Avez-vous de la disponibilité ?" required></textarea>
+          <textarea id="message" name="message" placeholder="Ex : Du 2 au 9 août, 2 adultes + 1 enfant. Avec 1 cheval. Disponibilités ?" required></textarea>
         </div>
-        <button type="submit" class="btn-submit">📅 Envoyer ma demande</button>
+        <button type="submit" class="btn-submit">Envoyer ma demande</button>
         <p class="form-note">Réponse garantie sous 24h · Sans engagement</p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══ FOOTER ═══ -->
 <footer itemscope itemtype="https://schema.org/Organization">
   <div class="footer-grid">
     <div class="footer-brand">
       <h3 itemprop="name">L'Arche du Négadis</h3>
-      <p itemprop="description">Gîtes équestres au cœur du Languedoc, à Paulhan dans l'Hérault. Élevage de mini-chevaux américains et Braque de Weimar. Un lieu rare où nature, confort et déconnexion se rencontrent.</p>
-      <div style="margin-top:1rem;font-size:0.85rem;color:rgba(255,255,255,0.5);" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-        📍 <span itemprop="streetAddress">Chemin du Négadis</span>, <span itemprop="postalCode">34230</span> <span itemprop="addressLocality">Paulhan</span>, Hérault
+      <p itemprop="description">Gîtes équestres au cœur du Languedoc, à Paulhan dans l'Hérault. Élevage de mini-chevaux américains AMHA et Braque de Weimar. Un lieu rare où nature, confort et déconnexion se rencontrent.</p>
+      <div class="footer-addr" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">Chemin du Négadis</span> · <span itemprop="postalCode">34230</span> <span itemprop="addressLocality">Paulhan</span><br>
+        <a href="tel:+33620557867" style="color:var(--gold);text-decoration:none;">06 20 55 78 67</a> · <a href="mailto:sarahespinas@gmail.com" style="color:var(--text-dim);text-decoration:none;">sarahespinas@gmail.com</a>
       </div>
     </div>
     <div class="footer-col">
@@ -1094,6 +1253,7 @@
         <li><a href="#gites">Maisonnette</a></li>
         <li><a href="#equestre">Espace équestre</a></li>
         <li><a href="#galerie">Galerie photos</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1101,76 +1261,58 @@
       <ul>
         <li><a href="https://arche-negadis.fr" target="_blank" rel="noopener">Domaine Arche Négadis</a></li>
         <li><a href="https://braque-de-weimar-herault.fr" target="_blank" rel="noopener">Élevage Braque Weimar</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#localisation">Localisation</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 L'Arche du Négadis · Gîtes Équestres · Paulhan (34) · <a href="mailto:sarahespinas@gmail.com" style="color:rgba(255,255,255,0.5);text-decoration:none;">sarahespinas@gmail.com</a></p>
+    <p>© 2025 L'Arche du Négadis · Gîtes Équestres · Paulhan (34)</p>
     <div class="footer-social">
       <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
       <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">♪</a>
     </div>
   </div>
 </footer>
 
 <script>
-  // ── NAV ──
+  /* NAV */
   const navbar = document.getElementById('navbar');
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  });
-
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
-
-  // ── GALLERY CAROUSELS ──
-  function initGallery(galleryId, dotsId) {
-    const gallery = document.getElementById(galleryId);
-    const imgs = gallery.querySelectorAll('img');
-    const dotsContainer = document.getElementById(dotsId);
-    let current = 0;
-    let timer;
-
+  /* GALLERY CAROUSELS */
+  function initGallery(id, dotsId) {
+    const g = document.getElementById(id);
+    const imgs = g.querySelectorAll('img');
+    const dc = document.getElementById(dotsId);
+    let cur = 0, timer;
     imgs.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Photo ' + (i + 1));
-      dot.onclick = () => { goTo(i); resetTimer(); };
-      dotsContainer.appendChild(dot);
+      const d = document.createElement('button');
+      d.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Photo ' + (i+1));
+      d.onclick = () => { go(i); reset(); };
+      dc.appendChild(d);
     });
-
-    function goTo(n) {
-      imgs[current].classList.remove('active');
-      dotsContainer.children[current].classList.remove('active');
-      current = (n + imgs.length) % imgs.length;
-      imgs[current].classList.add('active');
-      dotsContainer.children[current].classList.add('active');
+    function go(n) {
+      imgs[cur].classList.remove('active');
+      dc.children[cur].classList.remove('active');
+      cur = (n + imgs.length) % imgs.length;
+      imgs[cur].classList.add('active');
+      dc.children[cur].classList.add('active');
     }
-
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(() => goTo(current + 1), 3800);
-    }
-
-    resetTimer();
+    function reset() { clearInterval(timer); timer = setInterval(() => go(cur + 1), 4000); }
+    reset();
   }
+  initGallery('gallery1','dots1');
+  initGallery('gallery2','dots2');
 
-  initGallery('gallery1', 'dots1');
-  initGallery('gallery2', 'dots2');
-
-  // ── LIGHTBOX ──
-  const allImages = [
+  /* LIGHTBOX */
+  const lbImgs = [
     'images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-01.webp',
     'images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp',
     'images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-01.webp',
@@ -1184,53 +1326,35 @@
     'images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-03.webp',
     'images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-04.webp',
   ];
-  let lbIndex = 0;
-  const lightbox = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-
-  function openLightbox(i) {
-    lbIndex = i;
-    lbImg.src = allImages[i];
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function navigateLightbox(dir) {
-    lbIndex = (lbIndex + dir + allImages.length) % allImages.length;
-    lbImg.src = allImages[lbIndex];
-  }
-  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') navigateLightbox(-1);
-    if (e.key === 'ArrowRight') navigateLightbox(1);
+  let lbI = 0;
+  const lb = document.getElementById('lightbox');
+  const lbEl = document.getElementById('lbImg');
+  function openLb(i) { lbI=i; lbEl.src=lbImgs[i]; lb.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeLb() { lb.classList.remove('open'); document.body.style.overflow=''; }
+  function navLb(d) { lbI=(lbI+d+lbImgs.length)%lbImgs.length; lbEl.src=lbImgs[lbI]; }
+  lb.addEventListener('click', e => { if(e.target===lb) closeLb(); });
+  document.addEventListener('keydown', e => {
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') closeLb();
+    if(e.key==='ArrowLeft') navLb(-1);
+    if(e.key==='ArrowRight') navLb(1);
   });
 
-  // ── FAQ ──
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    item.classList.toggle('open');
-  }
+  /* FAQ */
+  function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
 
-  // ── SCROLL ANIMATIONS ──
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  /* SCROLL ANIMATIONS */
+  const obs = new IntersectionObserver(entries => entries.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('visible');
+  }), { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-  // ── FORM ──
-  function handleFormSubmit(e) {
+  /* FORM */
+  function handleForm(e) {
     const btn = e.target.querySelector('.btn-submit');
-    btn.textContent = '⏳ Envoi en cours…';
+    btn.textContent = 'Envoi en cours…';
     btn.disabled = true;
-    // Formspree handles the actual submission
-    setTimeout(() => {
-      btn.textContent = '✅ Message envoyé ! Réponse sous 24h.';
-    }, 1500);
+    setTimeout(() => { btn.textContent = '✓ Message envoyé — réponse sous 24h'; }, 1500);
   }
 </script>
 
