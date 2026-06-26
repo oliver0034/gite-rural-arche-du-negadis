@@ -96,10 +96,10 @@
   }
   </script>
 
-  <!-- Fonts — Cormorant Garamond (titres) + Inter (corps) -->
+  <!-- Fonts — Bodoni Moda (titres) + Jost (corps) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     /* ═══════════════════════════════════════════
@@ -130,7 +130,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Jost', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
@@ -141,7 +141,7 @@
        TYPOGRAPHY
     ═══════════════════════════════════════════ */
     h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bodoni Moda', serif;
       color: var(--cream);
       line-height: 1.2;
     }
@@ -160,7 +160,7 @@
 
     /* Section label */
     .label {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Jost', sans-serif;
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.18em;
@@ -177,7 +177,7 @@
       display: inline-flex; align-items: center; gap: 0.5rem;
       background: var(--gold); color: var(--bg);
       padding: 0.8rem 2rem; border-radius: 50px;
-      font-family: 'Inter', sans-serif; font-size: 0.8rem;
+      font-family: 'Jost', sans-serif; font-size: 0.8rem;
       font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
       text-decoration: none; transition: all 0.25s;
       border: 1px solid var(--gold);
@@ -191,7 +191,7 @@
       display: inline-flex; align-items: center; gap: 0.5rem;
       background: transparent; color: var(--cream);
       padding: 0.8rem 2rem; border-radius: 50px;
-      font-family: 'Inter', sans-serif; font-size: 0.8rem;
+      font-family: 'Jost', sans-serif; font-size: 0.8rem;
       font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
       text-decoration: none; transition: all 0.25s;
       border: 1px solid rgba(240,232,216,0.35);
@@ -237,7 +237,7 @@
       filter: drop-shadow(0 1px 6px rgba(201,160,90,0.25));
     }
     .nav-logo-text {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bodoni Moda', serif;
       font-size: 0.95rem; font-weight: 600;
       color: var(--cream); letter-spacing: 0.02em;
       line-height: 1.2; white-space: nowrap;
@@ -269,26 +269,60 @@
     /* ═══════════════════════════════════════════
        HERO
     ═══════════════════════════════════════════ */
+    /* ── HERO CINÉMATIQUE ── */
     .hero {
       min-height: 100vh;
-      display: grid; grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 8rem 5% 5rem;
-      gap: 5rem;
-      background: var(--bg);
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
-    .hero::before {
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%; height: 100%; object-fit: cover;
+      transform-origin: 65% 45%;
+      animation: cinematic 8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+    }
+    .hero-bg::after {
       content: '';
-      position: absolute; top: 0; right: 0;
-      width: 55%; height: 100%;
-      background: radial-gradient(ellipse at 80% 50%, rgba(201,160,90,0.05) 0%, transparent 60%);
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 65% 35%, rgba(255,100,10,0.3) 0%, transparent 50%);
+      animation: sunpulse 8s ease-in-out infinite alternate;
+      mix-blend-mode: screen;
       pointer-events: none;
     }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right,  rgba(8,7,5,0.72) 0%, rgba(8,7,5,0.3) 55%, transparent 100%),
+        linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 40%, rgba(8,7,5,0.96) 100%);
+    }
+    @keyframes cinematic {
+      0%   { transform: scale(1.25) translate(3%,  2%);  filter: brightness(0.82) saturate(1.4); }
+      50%  { transform: scale(1.12) translate(-2%, 0.5%); filter: brightness(1.08) saturate(1.6); }
+      100% { transform: scale(1.0)  translate(-3%, -2%); filter: brightness(0.92) saturate(1.2); }
+    }
+    @keyframes sunpulse {
+      0%   { opacity: 0.15; }
+      50%  { opacity: 0.9; }
+      100% { opacity: 0.3; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bg img { animation: none; }
+      .hero-bg::after { animation: none; }
+    }
 
+    .hero-center {
+      position: relative; z-index: 2;
+      padding: 0 6% 5rem;
+      max-width: 780px;
+    }
     .hero-eyebrow {
       display: flex; align-items: center; gap: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
     }
     .hero-eyebrow::before {
       content: '';
@@ -298,73 +332,87 @@
       font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--gold);
     }
-
-    .hero h1 { margin-bottom: 1.5rem; }
+    .hero h1 {
+      margin-bottom: 1.4rem;
+      color: #fff;
+      text-shadow: 0 2px 40px rgba(0,0,0,0.8), 0 0 80px rgba(0,0,0,0.5);
+    }
     .hero h1 em {
-      font-style: italic; color: var(--gold);
+      font-style: italic;
+      color: var(--gold);
       display: block;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 40px rgba(201,160,90,0.4);
+      filter: drop-shadow(0 0 12px rgba(201,160,90,0.35));
     }
-
     .hero-desc {
-      font-size: 1rem; color: var(--text);
-      margin-bottom: 2.5rem; max-width: 460px;
+      font-size: 1rem; color: rgba(240,230,210,0.9);
+      margin-bottom: 2.5rem; max-width: 520px;
       line-height: 1.85; font-weight: 300;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.7);
     }
-
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
 
+    /* Stats bar */
     .hero-stats {
       display: flex; gap: 0;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(201,160,90,0.25);
       padding-top: 2rem;
+      max-width: 560px;
     }
     .hero-stat {
       flex: 1; padding: 0 2rem 0 0;
-      border-right: 1px solid var(--border);
+      border-right: 1px solid rgba(201,160,90,0.2);
     }
     .hero-stat:last-child { border-right: none; padding-left: 2rem; padding-right: 0; }
     .hero-stat:first-child { padding-left: 0; }
     .hero-stat .num {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bodoni Moda', serif;
       font-size: 2rem; font-weight: 600; color: var(--gold);
       display: block; line-height: 1;
     }
     .hero-stat .lbl {
-      font-size: 0.72rem; color: var(--text-dim);
+      font-size: 0.72rem; color: rgba(180,170,150,0.7);
       text-transform: uppercase; letter-spacing: 0.1em;
       margin-top: 0.3rem; display: block;
     }
 
-    /* Hero visual */
-    .hero-visual { position: relative; }
-    .hero-mosaic {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      grid-template-rows: 300px 180px;
-      gap: 10px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute; bottom: 2rem; right: 6%;
+      z-index: 2; display: flex; flex-direction: column;
+      align-items: center; gap: 0.5rem;
     }
-    .hero-mosaic img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.6s ease;
+    .hero-scroll span {
+      font-size: 0.65rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(201,160,90,0.6);
+      writing-mode: vertical-rl;
     }
-    .hero-mosaic img:hover { transform: scale(1.04); }
-    .hero-mosaic .main { grid-row: span 2; }
+    .hero-scroll-line {
+      width: 1px; height: 60px;
+      background: linear-gradient(to bottom, rgba(201,160,90,0.6), transparent);
+      animation: scrollline 2s ease-in-out infinite;
+    }
+    @keyframes scrollline {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
 
-    .hero-float {
-      position: absolute; bottom: -1rem; left: -1.5rem;
-      background: var(--bg-3); border: 1px solid var(--gold-border);
-      padding: 1rem 1.4rem; border-radius: var(--radius);
-      display: flex; align-items: center; gap: 0.8rem;
-      z-index: 2; box-shadow: var(--shadow);
+    /* Photo cards overlay (coins) */
+    .hero-photos {
+      position: absolute; bottom: 3rem; right: 6%;
+      z-index: 2; display: flex; gap: 10px;
     }
-    .hero-float .fi { font-size: 1.6rem; }
-    .hero-float .ft strong {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem; color: var(--cream); display: block; font-weight: 500;
+    .hero-photo-card {
+      width: 120px; height: 90px;
+      border-radius: 8px; overflow: hidden;
+      border: 1px solid rgba(201,160,90,0.3);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      transition: transform 0.4s ease;
     }
-    .hero-float .ft span { font-size: 0.78rem; color: var(--text-dim); }
+    .hero-photo-card:hover { transform: scale(1.05) translateY(-4px); }
+    .hero-photo-card img { width: 100%; height: 100%; object-fit: cover; }
 
     /* ═══════════════════════════════════════════
        USP STRIP
@@ -466,10 +514,10 @@
       padding-top: 1.5rem; border-top: 1px solid var(--border);
     }
     .gite-price {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bodoni Moda', serif;
       font-size: 1.1rem; color: var(--cream);
     }
-    .gite-price span { font-size: 0.78rem; color: var(--text-dim); font-family: 'Inter', sans-serif; }
+    .gite-price span { font-size: 0.78rem; color: var(--text-dim); font-family: 'Jost', sans-serif; }
 
     /* ═══════════════════════════════════════════
        DOMAINE
@@ -507,7 +555,7 @@
     .pillar:hover { border-color: var(--gold-border); }
     .pillar-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
     .pillar h4 {
-      font-family: 'Inter', sans-serif; font-size: 0.85rem;
+      font-family: 'Jost', sans-serif; font-size: 0.85rem;
       font-weight: 600; color: var(--cream); margin-bottom: 0.15rem;
     }
     .pillar p { font-size: 0.82rem; color: var(--text-dim); margin: 0; }
@@ -580,7 +628,7 @@
     .eq-feat:hover { border-color: var(--gold-border); }
     .eq-feat .efi { font-size: 1.3rem; margin-bottom: 0.5rem; display: block; }
     .eq-feat h4 {
-      font-family: 'Inter', sans-serif; font-size: 0.82rem;
+      font-family: 'Jost', sans-serif; font-size: 0.82rem;
       font-weight: 600; color: var(--cream); margin-bottom: 0.2rem;
     }
     .eq-feat p { font-size: 0.78rem; color: var(--text-dim); margin: 0; }
@@ -624,7 +672,7 @@
     }
     .dist-name .di { font-size: 1rem; }
     .dist-time {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bodoni Moda', serif;
       font-size: 1rem; color: var(--gold); font-weight: 500;
     }
 
@@ -667,7 +715,7 @@
       width: 100%; text-align: left; padding: 1.1rem 1.3rem;
       background: none; border: none; cursor: pointer;
       display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-      font-family: 'Inter', sans-serif; font-size: 0.88rem;
+      font-family: 'Jost', sans-serif; font-size: 0.88rem;
       font-weight: 500; color: var(--cream);
     }
     .faq-icon { color: var(--gold); font-size: 1.1rem; transition: transform 0.3s; flex-shrink: 0; }
@@ -710,7 +758,7 @@
       width: 100%; padding: 0.75rem 1rem;
       background: rgba(255,255,255,0.04);
       border: 1px solid var(--border); border-radius: 8px;
-      font-family: 'Inter', sans-serif; font-size: 0.88rem;
+      font-family: 'Jost', sans-serif; font-size: 0.88rem;
       color: var(--cream); outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
@@ -725,7 +773,7 @@
       width: 100%; padding: 0.9rem;
       background: var(--gold); color: var(--bg);
       border: none; border-radius: 50px;
-      font-family: 'Inter', sans-serif; font-size: 0.78rem;
+      font-family: 'Jost', sans-serif; font-size: 0.78rem;
       font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
       cursor: pointer; transition: all 0.25s; margin-top: 0.5rem;
     }
@@ -745,13 +793,13 @@
     }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
     .footer-brand h3 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bodoni Moda', serif;
       font-size: 1.2rem; color: var(--cream); margin-bottom: 0.75rem; font-weight: 500;
     }
     .footer-brand p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.8; max-width: 320px; }
     .footer-addr { font-size: 0.78rem; color: var(--text-dim); margin-top: 1rem; line-height: 1.6; }
     .footer-col h4 {
-      font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700;
+      font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold);
       margin-bottom: 1.2rem;
     }
@@ -790,9 +838,9 @@
        RESPONSIVE
     ═══════════════════════════════════════════ */
     @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; padding-top: 7rem; gap: 3rem; }
-      .hero-visual { order: -1; }
-      .hero-mosaic { grid-template-rows: 200px 130px; }
+      .hero-center { padding: 0 5% 4rem; }
+      .hero-photos { display: none; }
+      .hero-scroll { display: none; }
       .domaine-grid, .equestre-grid, .contact-grid, .loc-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .gites-grid { grid-template-columns: 1fr; }
       .dom-stack { height: 300px; }
@@ -843,7 +891,14 @@
 
 <!-- ═══ HERO ═══ -->
 <section class="hero s-dark" id="home">
-  <div class="hero-content">
+  <!-- Photo plein écran avec Ken Burns -->
+  <div class="hero-bg">
+    <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-coucher-soleil-t2.jpg" alt="Coucher de soleil sur les vignes depuis le gîte L'Arche du Négadis, Paulhan Hérault" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+
+  <!-- Contenu texte -->
+  <div class="hero-center">
     <div class="hero-eyebrow">
       <span>Paulhan 34230 · Hérault · Occitanie</span>
     </div>
@@ -865,19 +920,24 @@
       <div class="hero-stat"><span class="num">A75</span><span class="lbl">à 5 min</span></div>
     </div>
   </div>
-  <div class="hero-visual">
-    <div class="hero-mosaic">
-      <img class="main" src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-01.webp" alt="Séjour lumineux du gîte L'Arche du Négadis, Paulhan Hérault" loading="eager">
-      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp" alt="Terrasse gîte équestre Paulhan" loading="eager">
-      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-02.webp" alt="Boxes chevaux domaine Arche du Négadis" loading="eager">
+
+  <!-- Photos miniatures coin bas-droite -->
+  <div class="hero-photos">
+    <div class="hero-photo-card">
+      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-coucher-soleil-t2.jpg" alt="Coucher de soleil gîte Paulhan" loading="eager">
     </div>
-    <div class="hero-float">
-      <span class="fi">🐴</span>
-      <div class="ft">
-        <strong>Élevage de mini-chevaux</strong>
-        <span>Séjour à la ferme · Paulhan</span>
-      </div>
+    <div class="hero-photo-card">
+      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp" alt="Terrasse gîte Paulhan" loading="eager">
     </div>
+    <div class="hero-photo-card">
+      <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-01.webp" alt="Séjour gîte Paulhan" loading="eager">
+    </div>
+  </div>
+
+  <!-- Indicateur scroll -->
+  <div class="hero-scroll">
+    <span>Défiler</span>
+    <div class="hero-scroll-line"></div>
   </div>
 </section>
 
@@ -909,8 +969,7 @@
         <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-02.webp" alt="Séjour appartement T2 vue vignes gîte Arche du Négadis" loading="lazy">
         <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-sejour-03.webp" alt="Lave-linge et vue sur vignes appartement T2 Paulhan" loading="lazy">
         <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-terrasse-01.webp" alt="Terrasse jardin privatisé appartement T2 gîte Paulhan" loading="lazy">
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-domaine-paddock.webp" alt="Jardin avec barbecue appartement T2 gîte Arche du Négadis" loading="lazy">
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-01.webp" alt="Chambre appartement T2 gîte L'Arche du Négadis Paulhan" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-coucher-soleil-ext.jpg" alt="Coucher de soleil sur le jardin privatisé appartement T2 gîte Paulhan Hérault" loading="lazy">
         <div class="gallery-dots" id="dots1"></div>
       </div>
       <div class="gite-body">
@@ -947,10 +1006,12 @@
       <div class="gite-gallery" id="gallery2">
         <div class="gite-overlay"></div>
         <span class="gite-tag">🐴 Vue chevaux</span>
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-05.webp" alt="Terrasse maisonnette avec vue directe sur les mini-chevaux Paulhan" class="active" itemprop="image" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-01.webp" alt="Chambre maisonnette gîte rural Arche du Négadis Paulhan" class="active" itemprop="image" loading="lazy">
         <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-04.webp" alt="Salon et cuisine maisonnette gîte saisonnier Arche du Négadis" loading="lazy">
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-interieur-04.webp" alt="Chambre maisonnette gîte nature Languedoc Paulhan" loading="lazy">
-        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-03.webp" alt="Extérieur domaine maisonnette gîte Arche du Négadis" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-domaine-paddock.webp" alt="Vue sur le paddock et les mini-chevaux depuis la maisonnette Paulhan" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-02.webp" alt="Extérieur maisonnette gîte Arche du Négadis Paulhan" loading="lazy">
+        <img src="images/gite-location-arche-du-negadis-paulhan-herault-34-exterieur-01.webp" alt="Vue extérieure maisonnette gîte rural Paulhan Hérault" loading="lazy">
+        <img src="images/Gite Rural, Poland, Arche du Négadis.jpeg" alt="Gîte rural Arche du Négadis Paulhan Poland Hérault" loading="lazy">
         <div class="gallery-dots" id="dots2"></div>
       </div>
       <div class="gite-body">
@@ -1138,7 +1199,7 @@
       <div class="map-inner">
         <span class="map-icon">📍</span>
         <address>
-          <strong style="color:var(--cream);font-size:1rem;font-family:'Cormorant Garamond',serif;">L'Arche du Négadis</strong><br>
+          <strong style="color:var(--cream);font-size:1rem;font-family:'Bodoni Moda',serif;">L'Arche du Négadis</strong><br>
           Chemin du Négadis<br>
           34230 Paulhan, Hérault
         </address>
