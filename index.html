@@ -310,6 +310,10 @@
       50%  { opacity: 0.9; }
       100% { opacity: 0.3; }
     }
+    @keyframes cinematic-mobile {
+      0%   { transform: scale(1.12) translate(1%, 1%);  filter: brightness(0.85) saturate(1.3); }
+      100% { transform: scale(1.0)  translate(-1%, 0%); filter: brightness(0.95) saturate(1.2); }
+    }
     @media (prefers-reduced-motion: reduce) {
       .hero-bg img { animation: none; }
       .hero-bg::after { animation: none; }
@@ -838,7 +842,8 @@
        RESPONSIVE
     ═══════════════════════════════════════════ */
     @media (max-width: 1024px) {
-      .hero-center { padding: 0 5% 4rem; }
+      .hero { min-height: 75vh; }
+      .hero-center { padding: 0 5% 3rem; }
       .hero-photos { display: none; }
       .hero-scroll { display: none; }
       .domaine-grid, .equestre-grid, .contact-grid, .loc-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -850,6 +855,10 @@
       .faq-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
+      .hero { min-height: 65vh; }
+      .hero-bg img { animation: cinematic-mobile 8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate; }
+      .hero-center { padding: 0 5% 2.5rem; }
+      .hero-desc { font-size: 0.9rem; }
       h1 { font-size: 2rem; }
       .hero-stats { flex-wrap: wrap; }
       .hero-stat { flex: 0 0 48%; }
