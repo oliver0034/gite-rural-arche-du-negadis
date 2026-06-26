@@ -660,6 +660,37 @@
        LOCALISATION
     ═══════════════════════════════════════════ */
     .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3.5rem; }
+    .loc-activities { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
+    .loc-activities-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .loc-activities-label::before {
+      content: ''; width: 24px; height: 1px; background: var(--gold);
+    }
+    .loc-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .loc-photo-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      border: 1px solid var(--gold-border);
+    }
+    .loc-photo-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .loc-photo-item:hover img { transform: scale(1.05); }
+    @media (max-width: 600px) {
+      .loc-photos { grid-template-columns: 1fr 1fr; }
+      .loc-photo-item:last-child { grid-column: span 2; }
+    }
 
     .dist-list { display: flex; flex-direction: column; gap: 0.6rem; }
     .dist-item {
@@ -1215,6 +1246,22 @@
         <a href="https://www.google.fr/maps/search/Chemin+du+Negadis+34230+Paulhan" target="_blank" rel="noopener">
           Ouvrir dans Google Maps →
         </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Galerie balades équestres -->
+  <div class="loc-activities fade-up">
+    <p class="loc-activities-label">Balades à cheval · Hérault &amp; Lac du Salagou</p>
+    <div class="loc-photos">
+      <div class="loc-photo-item">
+        <img src="images/balade a cheval herault paulhan 34 .jpeg" alt="Balade à cheval dans l'Hérault près de Paulhan, gîte rural L'Arche du Négadis" loading="lazy">
+      </div>
+      <div class="loc-photo-item">
+        <img src="images/balade lac du salagou herault 34.jpeg" alt="Balade à cheval au bord du Lac du Salagou, Hérault" loading="lazy">
+      </div>
+      <div class="loc-photo-item">
+        <img src="images/Balade à cheval, lac du Salagou, Arches du Négadis.jpeg" alt="Cavalier au Lac du Salagou depuis le gîte L'Arche du Négadis, Paulhan" loading="lazy">
       </div>
     </div>
   </div>
